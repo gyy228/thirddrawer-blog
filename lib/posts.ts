@@ -56,28 +56,64 @@ function toPostMeta(slug: string, data: PostFrontMatter): PostMeta {
   };
 }
 
+/**
+ * 解析 front-matter，出错时把文件路径带进错误信息。
+ *
+ * gray-matter 抛的 YAMLException 只给行号、不给文件名，文章一多就无从下手。
+ * 这里补上相对路径和常见原因，让构建失败时能直接定位。
+ */
+function parseFrontMatter(raw: string, filePath: string) {
+  try {
+    return matter(raw);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    const relative = path.relative(process.cwd(), filePath);
+    throw new Error(
+      `无法解析 ${relative} 的 front-matter\n\n${message}\n\n` +
+        `常见原因：数组或对象没闭合、冒号后面缺空格、缩进不一致、含特殊字符却没用引号。`,
+    );
+  }
+}
+
 /** 取全部文章，默认按日期倒序并过滤草稿 */
 export function getAllPosts(options: { includeDrafts?: boolean } = {}): PostMeta[] {
   const { includeDrafts = false } = options;
 
   return readSlugs()
     .map((slug) => {
-      const raw = fs.readFileSync(path.join(POSTS_DIR, `${slug}.md`), "utf8");
-      const { data } = matter(raw);
+      const filePath = path.join(POSTS_DIR, `${slug}.md`);
+      const raw = fs.readFileSync(filePath, "utf8");
+      const { data } = parseFrontMatter(raw, filePath);
       return toPostMeta(slug, data as PostFrontMatter);
     })
     .filter((post) => includeDrafts || !post.draft)
     .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
 }
 
-/** 按 slug 取单篇文章（含正文），不存在返回 null */
-export function getPostBySlug(slug: string): Post | null {
+/**
+ * 按 slug 取单篇文章（含正文），不存在返回 null。
+ *
+ * 默认**过滤草稿**：`generateStaticParams` 虽然跳过了草稿，但
+ * `dynamicParams` 默认允许按需渲染，若这里不过滤，草稿页仍可通过
+ * 直接访问 URL 读到——等于把未发布内容公开了。
+ * 本地控制台预览草稿时传 `includeDrafts: true`。
+ */
+export function getPostBySlug(
+  slug: string,
+  options: { includeDrafts?: boolean } = {},
+): Post | null {
+  const { includeDrafts = false } = options;
+
   const file = path.join(POSTS_DIR, `${slug}.md`);
   if (!fs.existsSync(file)) return null;
 
   const raw = fs.readFileSync(file, "utf8");
-  const { data, content } = matter(raw);
-  return { ...toPostMeta(slug, data as PostFrontMatter), content };
+  const { data, content } = parseFrontMatter(raw, file);
+  const post: Post = { ...toPostMeta(slug, data as PostFrontMatter), content };
+
+  if (post.draft && !includeDrafts) return null;
+
+  return post;
 }
 
 /** 标签统计，用于归档页 */
