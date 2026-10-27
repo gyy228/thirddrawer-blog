@@ -1,0 +1,3 @@
+# 仓库内一律使用 LF。
+# 开发在 Windows、构建在 Linux（Vercel），不统一会产生大量换行符噪音。
+* text=auto eol=lf
