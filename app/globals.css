@@ -262,6 +262,46 @@ body {
   font-weight: 500;
 }
 
+/* ─── 时间线 ─────────────────────────────────────
+   竖线用 li 的伪元素画在左侧，每个节点上叠一个小圆点。
+   最后一项的线收短，避免线尾巴露出到组外。 */
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.13rem;
+  top: 1.15rem;
+  bottom: -0.6rem;
+  width: 1px;
+  background: var(--glass-brd);
+  border-left: 1px solid color-mix(in srgb, var(--fg-faint) 30%, transparent);
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: -1.45rem;
+  top: 1.35rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 9999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
 /* 行内代码 */
 .article :not(pre) > code {
   background: var(--code-bg);
