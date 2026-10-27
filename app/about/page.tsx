@@ -70,13 +70,18 @@ export default function AboutPage() {
       <GlassCard className="p-5">
         <p className="text-xs font-medium tracking-wide text-fg-faint">本站由什么搭起来</p>
         <ul className="mt-2.5 grid grid-cols-2 gap-1.5 text-sm text-fg-muted sm:grid-cols-3">
-          {["Next.js 16", "React 19", "Tailwind 4", "TypeScript", "Markdown", "Vercel"].map(
-            (item) => (
-              <li key={item} className="font-mono text-xs">
-                {item}
-              </li>
-            ),
-          )}
+          {[
+            "Next.js 16",
+            "React 19",
+            "Tailwind 4",
+            "TypeScript",
+            "Markdown",
+            "GitHub Pages",
+          ].map((item) => (
+            <li key={item} className="font-mono text-xs">
+              {item}
+            </li>
+          ))}
         </ul>
       </GlassCard>
     </div>
