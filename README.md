@@ -2,22 +2,25 @@
 
 > 抽屉里全是说不清有什么用、却舍不得扔的东西。
 
-一个毛玻璃风格的个人博客。Next.js 16 + React 19 + Tailwind 4 + TypeScript，内容为纯 Markdown，构建成静态页面后部署在 Vercel。
+一个毛玻璃风格的个人博客。Next.js 16 + React 19 + Tailwind 4 + TypeScript，内容为纯 Markdown，构建成**静态站点**后部署在 GitHub Pages。
 
 ## 本地运行
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
+npm run dev      # http://localhost:3000/thirddrawer-blog
 ```
+
+注意地址带着 `/thirddrawer-blog` 子路径——因为 GitHub Pages 的项目仓库部署在这个路径下（`basePath`），本地开发也保持一致。
 
 其他命令：
 
 ```bash
-npm run build    # 生产构建
-npm start        # 跑生产构建
+npm run build    # 生成静态站点到 out/
 npm run lint     # ESLint
 ```
+
+**没有 `npm start`**：本站采用 `output: "export"` 静态导出，没有服务器运行时，`next start` 不再适用。要预览构建产物，把 `out/` 目录整个挂到 `/thirddrawer-blog/` 路径下即可，日常开发用 `npm run dev` 就够了。
 
 ## 写一篇文章
 
@@ -69,7 +72,18 @@ siteConfig.ts           全站配置
 
 ## 部署
 
-推送到 GitHub 后，在 Vercel 导入仓库即可，Framework Preset 选 Next.js，无需额外配置。
+本站是纯静态站点，通过 GitHub Actions 自动部署到 GitHub Pages。
+
+工作流在 `.github/workflows/deploy.yml`：推送到 `main` 分支即触发——安装依赖、跑 lint、`npm run build` 生成 `out/`，再上传并发布到 Pages。
+
+**首次启用需要在仓库里做两件事**：
+
+1. **把仓库设为 Public**（免费的 GitHub Pages 只对公开仓库开放）
+2. **Settings → Pages → Build and deployment → Source** 选 **GitHub Actions**
+
+之后每次推送会自动重新部署，站点地址是 `https://<用户名>.github.io/thirddrawer-blog/`。
+
+> 换到自定义域名时，记得同步删掉 `next.config.ts` 里的 `basePath`，否则资源路径会多一层前缀。
 
 ## 说明
 
