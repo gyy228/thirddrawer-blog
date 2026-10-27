@@ -18,6 +18,7 @@ export const siteConfig = {
     { href: "/notes", label: "说说" },
     { href: "/timeline", label: "时间线" },
     { href: "/archive", label: "归档" },
+    { href: "/projects", label: "项目" },
     { href: "/about", label: "关于" },
   ],
 
