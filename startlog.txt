@@ -1,9 +1,9 @@
 
 > thirddrawer-site@0.1.0 start
-> next start
+> next start -p 3100
 
 ▲ Next.js 16.4.3
-- Local:         http://localhost:3000
-- Network:       http://198.18.0.1:3000
-✓ Ready in 127ms
-✓ Running next.config.ts took 28ms
+- Local:         http://localhost:3100
+- Network:       http://198.18.0.1:3100
+✓ Ready in 137ms
+✓ Running next.config.ts took 30ms
