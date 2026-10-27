@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local verification artifacts
+# （本地起服务时把日志重定向到仓库外更干净，这里只是兜底）
+startlog.txt
+*.log
