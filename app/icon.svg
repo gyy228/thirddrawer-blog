@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="第三层抽屉">
+  <defs>
+    <linearGradient id="xhs" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d8bff" />
+      <stop offset="1" stop-color="#a78bfa" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#xhs)" />
+  <!-- 字母 T：顶横 + 竖笔，几何硬边，不依赖任何字体 -->
+  <path d="M15 16 H49 V24 H37 V48 H27 V24 H15 Z" fill="#ffffff" />
+</svg>
