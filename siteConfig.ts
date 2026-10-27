@@ -34,9 +34,12 @@ export const siteConfig = {
   motto: "有些东西没什么用，但扔不掉。",
 
   // ── 站点元信息 ──────────────────────────────────
-  siteUrl: "", // 部署后填，例如 https://thirddrawer.vercel.app
+  /**
+   * 部署后填成正式地址（例如 https://thirddrawer.vercel.app）。
+   * 作为 metadataBase 使用，让元信息里的相对路径能被正确解析。
+   */
+  siteUrl: "",
   buildDate: "2026-10-27",
-  postsPerPage: 10,
 } as const;
 
 export type SiteConfig = typeof siteConfig;

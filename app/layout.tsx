@@ -8,6 +8,8 @@ import "katex/dist/katex.min.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  // 填了正式地址后作为 metadataBase，相对资源路径才能正确解析
+  ...(siteConfig.siteUrl ? { metadataBase: new URL(siteConfig.siteUrl) } : {}),
   title: {
     default: `${siteConfig.title} · ${siteConfig.subtitle}`,
     template: `%s · ${siteConfig.title}`,
