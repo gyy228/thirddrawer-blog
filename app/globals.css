@@ -233,6 +233,35 @@ body {
   --tw-prose-pre-code: var(--fg);
 }
 
+/* ─── 说说正文 ───────────────────────────────────
+   说说只是一两句话，走的是精简管线（只有行内语法）。
+   这里覆盖段落默认外边距，并给行内代码统一外观。 */
+.note-body p {
+  margin: 0;
+}
+
+.note-body p + p {
+  margin-top: 0.6em;
+}
+
+.note-body a {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.note-body del {
+  color: var(--fg-faint);
+}
+
+.note-body :not(pre) > code {
+  background: var(--code-bg);
+  padding: 0.15em 0.4em;
+  border-radius: 0.375rem;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
 /* 行内代码 */
 .article :not(pre) > code {
   background: var(--code-bg);

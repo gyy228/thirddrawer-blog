@@ -32,6 +32,24 @@ export async function markdownToHtml(markdown: string): Promise<string> {
 }
 
 /**
+ * 说说正文的 Markdown → HTML
+ *
+ * 说说只是一两句话，用完整管线会引入不必要的开销（表格、公式、标题锚点
+ * 对短句都没意义），而且允许这些构造反而会让卡片排版崩掉。
+ * 这里只保留 GFM 的行内语法：加粗、斜体、删除线、链接、行内代码。
+ */
+export async function noteToHtml(markdown: string): Promise<string> {
+  const file = await unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype)
+    .use(rehypeStringify)
+    .process(markdown);
+
+  return String(file);
+}
+
+/**
  * 提取二级标题生成目录。
  *
  * 用 github-slugger 逐级计算 id —— 它正是 rehype-slug 内部用的库，
