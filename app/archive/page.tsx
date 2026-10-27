@@ -28,7 +28,7 @@ export default function ArchivePage() {
             {tags.map(({ tag, count }) => (
               <span
                 key={tag}
-                className="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs text-accent"
+                className="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs text-accent-text"
               >
                 #{tag}
                 <span className="ml-1 text-fg-faint">{count}</span>

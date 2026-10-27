@@ -33,7 +33,7 @@ export function Navbar() {
                   aria-current={isActive(pathname, item.href) ? "page" : undefined}
                   className={`rounded-full px-3 py-1.5 text-sm transition-colors ${
                     isActive(pathname, item.href)
-                      ? "bg-accent-soft text-accent"
+                      ? "bg-accent-soft text-accent-text"
                       : "text-fg-muted hover:text-fg"
                   }`}
                 >
@@ -67,7 +67,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className={`block rounded-xl px-3 py-2 text-sm ${
                   isActive(pathname, item.href)
-                    ? "bg-accent-soft text-accent"
+                    ? "bg-accent-soft text-accent-text"
                     : "text-fg-muted"
                 }`}
               >

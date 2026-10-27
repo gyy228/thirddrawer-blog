@@ -13,10 +13,10 @@
   --bg-b: #fdeef5;
   --bg-c: #e8f8f4;
 
-  /* 文字 */
+  /* 文字（对比度经 WCAG AA 4.5:1 校验，见 ROADMAP「无障碍审计」） */
   --fg: #1c2434;
   --fg-muted: #5a6a80;
-  --fg-faint: #8a97a8;
+  --fg-faint: #67707d;
 
   /* 毛玻璃 */
   --glass-bg: rgba(255, 255, 255, 0.6);
@@ -24,8 +24,10 @@
   --glass-hi: rgba(255, 255, 255, 0.95);
   --glass-shadow: 0 10px 34px -14px rgba(28, 36, 52, 0.3);
 
-  /* 强调色 */
+  /* 强调色：accent 只用于装饰（进度条/边框/光晕），
+     accent-text 专供文字——色相不变，压明度以满足 4.5:1 */
   --accent: #5b7cfa;
+  --accent-text: #4963c8;
   --accent-soft: rgba(91, 124, 250, 0.12);
 
   /* 代码块 */
@@ -55,7 +57,7 @@
 
   --fg: #e7ecf6;
   --fg-muted: #97a3ba;
-  --fg-faint: #6b7789;
+  --fg-faint: #778292;
 
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-brd: rgba(255, 255, 255, 0.1);
@@ -63,6 +65,7 @@
   --glass-shadow: 0 10px 34px -14px rgba(0, 0, 0, 0.75);
 
   --accent: #8ba4ff;
+  --accent-text: #8ba4ff; /* 深色下本已满足 4.5:1，与 accent 相同 */
   --accent-soft: rgba(139, 164, 255, 0.14);
 
   --code-bg: rgba(255, 255, 255, 0.05);
@@ -81,6 +84,7 @@
   --color-fg-muted: var(--fg-muted);
   --color-fg-faint: var(--fg-faint);
   --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
   --color-accent-soft: var(--accent-soft);
   --font-sans: var(--font-stack);
   --font-mono: var(--font-code);
@@ -201,7 +205,7 @@ body {
 .article {
   --tw-prose-body: var(--fg-muted);
   --tw-prose-headings: var(--fg);
-  --tw-prose-links: var(--accent);
+  --tw-prose-links: var(--accent-text);
   --tw-prose-bold: var(--fg);
   --tw-prose-counters: var(--fg-faint);
   --tw-prose-bullets: var(--fg-faint);

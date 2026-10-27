@@ -71,7 +71,7 @@ export default async function PostPage({ params }: PageProps<"/posts/[slug]">) {
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-accent-soft px-2.5 py-0.5 text-accent"
+              className="rounded-full bg-accent-soft px-2.5 py-0.5 text-accent-text"
             >
               #{tag}
             </span>
@@ -87,7 +87,7 @@ export default async function PostPage({ params }: PageProps<"/posts/[slug]">) {
               <li key={heading.id}>
                 <a
                   href={`#${heading.id}`}
-                  className="text-sm text-fg-muted transition-colors hover:text-accent"
+                  className="text-sm text-fg-muted transition-colors hover:text-accent-text"
                 >
                   {heading.text}
                 </a>

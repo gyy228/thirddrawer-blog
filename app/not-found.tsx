@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div className="glass rounded-2xl p-10 text-center sm:p-14">
-      <p className="font-mono text-5xl font-semibold text-accent">404</p>
+      <p className="font-mono text-5xl font-semibold text-accent-text">404</p>
       <p className="mt-4 text-sm text-fg-muted">这一格抽屉是空的。</p>
       <Link
         href="/"

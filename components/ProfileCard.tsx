@@ -23,7 +23,7 @@ export function ProfileCard() {
             className="size-14 shrink-0 rounded-full object-cover"
           />
         ) : (
-          <div className="grid size-14 shrink-0 place-items-center rounded-full bg-accent-soft text-xl font-semibold text-accent">
+          <div className="grid size-14 shrink-0 place-items-center rounded-full bg-accent-soft text-xl font-semibold text-accent-text">
             {initial}
           </div>
         )}
