@@ -4,6 +4,10 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { GlassCard } from "@/components/GlassCard";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { extractHeadings, markdownToHtml } from "@/lib/markdown";
+// KaTeX 样式只在这里引入，不放 layout：
+// 只有文章页可能出现公式，而它占了整份 CSS 的三成左右。
+// 放在全局会让首页、说说、关于这些页面白白多下载 60 KB。
+import "katex/dist/katex.min.css";
 import {
   formatDate,
   getAdjacentPosts,

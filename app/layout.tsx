@@ -4,7 +4,6 @@ import { BackgroundLayer } from "@/components/BackgroundLayer";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/siteConfig";
-import "katex/dist/katex.min.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
