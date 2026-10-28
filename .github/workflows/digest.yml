@@ -49,7 +49,18 @@ jobs:
         env:
           SITE_DIR: ${{ github.workspace }}
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
-        run: node tools/digest/run.mjs ${{ inputs.force && '--force' || '' }}
+          # 用环境变量显式传，别用 `${{ 表达式 }}` 拼进命令行——
+          # 之前那版拼出来是空串，force 根本没生效，工作流却是绿的。
+          FORCE: ${{ inputs.force }}
+        run: |
+          echo "收到的 force 参数：[$FORCE]"
+          if [ "$FORCE" = "true" ]; then
+            echo "→ 带 --force 运行（会覆盖今天的草稿）"
+            node tools/digest/run.mjs --force
+          else
+            echo "→ 正常模式（今天已有草稿就跳过）"
+            node tools/digest/run.mjs
+          fi
 
       # 明确检查草稿有没有真的生成。
       # 之前出过「工作流显示成功但什么都没生成」的情况
