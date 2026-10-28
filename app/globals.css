@@ -132,8 +132,9 @@ body {
   background: var(--glass-bg);
   border: 1px solid var(--glass-brd);
   box-shadow: var(--glass-shadow);
+  /* 只写标准属性。手写 -webkit- 前缀会和这条被构建工具合并，
+     实测标准属性会被整个删掉，导致模糊效果完全不生效。 */
   backdrop-filter: blur(18px) saturate(170%);
-  -webkit-backdrop-filter: blur(18px) saturate(170%);
 }
 
 /* 可抬起的卡片 */
