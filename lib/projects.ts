@@ -1,11 +1,13 @@
+import raw from "@/data/projects.json";
+
 /**
  * 项目清单。
  *
- * 和文章、说说不同，项目不是「按时间发布的内容」，而是一份需要人工维护的
- * 清单——它不会每天变，也不该躺在时间线里。所以直接写成结构化的 TS 数据，
- * 而不是 Markdown：改的时候改这里，类型检查会帮你发现写错字段。
+ * 数据在 data/projects.json，控制台直接读写它——
+ * 这样加项目不用碰源码，也就不会被改坏。
  *
- * 加一个项目就往数组里加一项。
+ * 之前这里是写死的 TS 数组。迁到 JSON 的原因是控制台需要增删改，
+ * 而让程序去改写源码文件既危险又难看。
  */
 
 export type ProjectStatus = "active" | "wip" | "archived";
@@ -29,19 +31,8 @@ export interface Project {
   year: number;
 }
 
-export const PROJECTS: Project[] = [
-  {
-    slug: "thirddrawer-blog",
-    name: "第三层抽屉",
-    description: "你现在看的这个站。毛玻璃风格的个人博客，配一个本地写作控制台。",
-    detail:
-      "Next.js 静态导出部署在 GitHub Pages；控制台在本地跑，写完文章点一下就把改动推上 GitHub 并自动重新部署。",
-    repo: "https://github.com/gyy228/thirddrawer-blog",
-    stack: ["Next.js", "TypeScript", "Tailwind", "Tiptap"],
-    status: "active",
-    year: 2026,
-  },
-];
+/** JSON 导入的类型是宽泛的，这里收窄一次 */
+export const PROJECTS = raw as Project[];
 
 /** 状态的中文名与配色 */
 export const STATUS_META: Record<

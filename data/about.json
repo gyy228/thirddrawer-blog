@@ -1,0 +1,11 @@
+{
+  "intro": "一个放零碎东西的地方。没有主题，没有更新频率，也没有非写不可的理由。想到什么就塞进来，想不起来就一直搁着——反正抽屉本来就是这样用的。",
+  "stack": [
+    "Next.js 16",
+    "React 19",
+    "Tailwind 4",
+    "TypeScript",
+    "Markdown",
+    "GitHub Pages"
+  ]
+}
