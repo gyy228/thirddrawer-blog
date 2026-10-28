@@ -72,7 +72,11 @@ export async function collect({ verbose = true } = {}) {
   const all = [];
   for (const { feed, error, items } of results) {
     if (verbose) {
-      const status = error ? `✗ ${error}` : `✓ ${items.length} 条`;
+      // 403 / 451 多半是对方按 IP 地区限制了。
+      // 阮一峰这类站在国内抓得到、在 GitHub 的海外 runner 上抓不到，
+      // 光写「✗ HTTP 403」会让人以为站坏了。
+      const geo = /40[13]|451/.test(error ?? "") ? "（可能限制海外访问，国内可抓）" : "";
+      const status = error ? `✗ ${error}${geo}` : `✓ ${items.length} 条`;
       console.log(`  ${feed.name.padEnd(8, "　")} ${status}`);
     }
     for (const item of items) {

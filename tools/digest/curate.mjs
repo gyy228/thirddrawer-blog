@@ -70,7 +70,12 @@ ${list}`;
         { role: "user", content: userPrompt },
       ],
       temperature: 0.4,
-      max_tokens: 1500,
+      // 必须给足。deepseek-flash 是会先「思考」的模型，
+      // max_tokens 同时限制思考过程和正式回答——原来给 1500，
+      // 某次思考就吃光了全部额度，content 直接是空字符串，
+      // 表现为「模型没有返回可解析的 JSON」，很难看出真实原因。
+      // 按实际用量付费，给大不浪费。
+      max_tokens: 4000,
       response_format: { type: "json_object" },
       stream: false,
     }),
@@ -82,11 +87,30 @@ ${list}`;
   }
 
   const data = await res.json();
-  const raw = data?.choices?.[0]?.message?.content ?? "";
+  const choice = data?.choices?.[0];
+  const raw = choice?.message?.content ?? "";
+  const finish = choice?.finish_reason ?? "未知";
+  const usage = data?.usage;
+
+  // 空回答单独报错，并把 finish_reason / 用量带上。
+  // 否则只会看到「没有返回可解析的 JSON，原文前 300 字：」后面一片空白。
+  if (!String(raw).trim()) {
+    const why =
+      finish === "length"
+        ? "思考过程把 max_tokens 用完了，正式回答被截断成空"
+        : "模型返回了空内容";
+    throw new Error(
+      `${why}（finish_reason=${finish}，` +
+        `completion=${usage?.completion_tokens ?? "?"} ` +
+        `其中思考=${usage?.completion_tokens_details?.reasoning_tokens ?? "?"}）`,
+    );
+  }
 
   const parsed = parseModelJson(raw);
   if (!parsed) {
-    throw new Error(`模型没有返回可解析的 JSON，原文前 300 字：${raw.slice(0, 300)}`);
+    throw new Error(
+      `模型没有返回可解析的 JSON（finish_reason=${finish}），原文前 300 字：${raw.slice(0, 300)}`,
+    );
   }
 
   const picked = [];
