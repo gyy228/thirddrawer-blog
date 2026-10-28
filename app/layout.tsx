@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { BackgroundLayer } from "@/components/BackgroundLayer";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { AiChat } from "@/components/AiChat";
 import { siteConfig } from "@/siteConfig";
 import "./globals.css";
 
@@ -49,6 +50,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             {children}
           </main>
           <Footer />
+          {/* 接口地址没配置时 AiChat 自己不渲染，这里不用额外判断 */}
+          <AiChat endpoint={siteConfig.ai.endpoint} label={siteConfig.ai.label} />
         </ThemeProvider>
       </body>
     </html>
