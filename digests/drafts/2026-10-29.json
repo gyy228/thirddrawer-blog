@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-29",
+  "status": "draft",
+  "generatedAt": "2026-10-28T16:42:15.095Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "女子信任 ChatGPT 的用药决策，结果因此猝死",
+      "url": "https://www.solidot.org/story?sid=85737",
+      "source": "Solidot",
+      "topic": "AI / 机器学习",
+      "summary": "31 岁女性按 ChatGPT 给出的逐日减药计划自行停用抗癫痫药后死亡，其父母起诉 OpenAI 及 Altman，指其无照行医。案件触及 AI 给出医疗建议的责任边界。",
+      "publishedAt": "2026-10-28T14:46:03.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Anthropic 工程经理把传统编程面试砍了，“它不再提供有效信号”",
+      "url": "https://www.oschina.net/news/503275/the-coding-interview-is-dead",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "Anthropic 工程经理 Felix Rieseberg 表示本月已把传统编程面试移出招聘流程，理由是它不再提供有效信号。他此前负责 Claude.ai 与 Claude Code Desktop。",
+      "publishedAt": "2026-10-28T10:08:54.000Z"
+    },
+    {
+      "id": "3",
+      "title": "开源终端模拟器 Ghostty 发布 1.4.0，优化内存占用 & 性能",
+      "url": "https://www.oschina.net/news/503260/ghostty-release-1-4-0",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "开源终端 Ghostty 发布 1.4.0，7 个月、172 位贡献者，重点优化内存与性能；并指出 macOS 内核把每次 pty 读取限制在 1 KiB，解释了此前的性能瓶颈。",
+      "publishedAt": "2026-10-28T02:39:28.000Z"
+    },
+    {
+      "id": "4",
+      "title": "一日一技｜NAS 作为 UPS 总控，实现局域网多设备断电自动关机",
+      "url": "https://sspai.com/post/115855",
+      "source": "少数派",
+      "topic": "编程 / 工程实践",
+      "summary": "借助 NUT 网络 UPS 协议，一台 UPS 即可驱动局域网内多台设备在断电时协同自动关机。文中给出 NAS 充当总控的具体配置思路，可供多设备家庭环境参考。",
+      "publishedAt": "2026-10-27T03:02:18.000Z"
+    },
+    {
+      "id": "5",
+      "title": "Manus，刚刚悄悄发布了自己的 2.0 宣言",
+      "url": "http://www.geekpark.net/news/373004",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "Manus 联合创始人张涛在公众号发文《用 Manus 改造 Manus》，记录给工程师提需求的过程与产品迭代思路，可作为了解 Agent 产品方向的一手材料。",
+      "publishedAt": "2026-10-27T08:49:29.000Z"
+    }
+  ]
+}
