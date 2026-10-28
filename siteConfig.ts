@@ -48,7 +48,7 @@ export const siteConfig = {
      *
      * 形如：https://thirddrawer-ai.<你的子域>.workers.dev/chat
      */
-    endpoint: "",
+    endpoint: "https://thirddrawer-ai.2065738974.workers.dev/chat",
     /** 入口按钮上的文案 */
     label: "问问我",
   },
