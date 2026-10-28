@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useSession } from "./SessionProvider";
-import { deleteFile, getFile, listDir, putFile } from "@/lib/console/github";
+import { deleteFile, getFile, getJson, listDir, putFile } from "@/lib/console/github";
 import type { FileEntry } from "@/lib/console/github";
 import {
   buildFrontMatter,
@@ -15,7 +15,8 @@ interface Draft {
   slug: string;
   title: string;
   date: string;
-  tags: string;
+  /** 标签改成数组：控制台里是勾选，不是手写 */
+  tags: string[];
   summary: string;
   draft: boolean;
   body: string;
@@ -35,7 +36,7 @@ function emptyDraft(): Draft {
     slug: "",
     title: "",
     date: today(),
-    tags: "",
+    tags: [],
     summary: "",
     draft: true,
     body: "",
@@ -48,11 +49,31 @@ export function PostsPanel() {
 
   const [files, setFiles] = useState<FileEntry[]>([]);
   const [loadingList, setLoadingList] = useState(true);
+  const [presetTags, setPresetTags] = useState<string[]>([]);
+  const [customTag, setCustomTag] = useState("");
   const [draft, setDraft] = useState<Draft | null>(null);
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState<{ tone: "ok" | "err"; text: string } | null>(null);
   const [preview, setPreview] = useState("");
   const [showPreview, setShowPreview] = useState(false);
+
+  // 预设标签来自仓库里的 data/tags.json，和归档页筛选用的是同一份
+  useEffect(() => {
+    void (async () => {
+      try {
+        const result = await getJson<{ tags: string[] }>(
+          token,
+          "data/tags.json",
+          { tags: [] },
+          repo,
+        );
+        setPresetTags(Array.isArray(result.data?.tags) ? result.data.tags : []);
+      } catch {
+        // 读不到就不显示预设，手写输入仍然可用
+        setPresetTags([]);
+      }
+    })();
+  }, [token, repo]);
 
   const loadList = useCallback(async () => {
     // 刻意不在开头同步 setState：那会触发 react-hooks/set-state-in-effect，
@@ -114,7 +135,12 @@ export function PostsPanel() {
         slug,
         title: String(data.title ?? ""),
         date: String(data.date ?? "").slice(0, 10) || today(),
-        tags: Array.isArray(data.tags) ? data.tags.join(", ") : String(data.tags ?? ""),
+        tags: Array.isArray(data.tags)
+          ? data.tags.map(String)
+          : String(data.tags ?? "")
+              .split(/[,，]/)
+              .map((t) => t.trim())
+              .filter(Boolean),
         summary: String(data.summary ?? ""),
         draft: Boolean(data.draft),
         body: body.replace(/^\n+/, ""),
@@ -147,10 +173,7 @@ export function PostsPanel() {
         {
           title,
           date: draft.date,
-          tags: draft.tags
-            .split(/[,，]/)
-            .map((t) => t.trim())
-            .filter(Boolean),
+          tags: draft.tags,
           summary: draft.summary.trim(),
           draft: draft.draft,
         },
@@ -315,14 +338,65 @@ export function PostsPanel() {
               />
             </label>
 
-            <label className="block text-sm">
-              <span className="text-fg-muted">标签（逗号分隔）</span>
-              <input
-                value={draft.tags}
-                onChange={(e) => setDraft({ ...draft, tags: e.target.value })}
-                className={field}
-              />
-            </label>
+            <div className="text-sm">
+              <span className="text-fg-muted">标签（点一下选中，可多选）</span>
+
+              <div className="mt-1.5 flex flex-wrap gap-1.5">
+                {/* 预设 + 本文已有但预设里没有的，一起列出，避免历史标签丢失 */}
+                {[...new Set([...presetTags, ...draft.tags])].map((tag) => {
+                  const active = draft.tags.includes(tag);
+                  return (
+                    <button
+                      key={tag}
+                      type="button"
+                      aria-pressed={active}
+                      onClick={() =>
+                        setDraft({
+                          ...draft,
+                          tags: active
+                            ? draft.tags.filter((t) => t !== tag)
+                            : [...draft.tags, tag],
+                        })
+                      }
+                      className={`rounded-full px-2.5 py-0.5 text-xs transition-colors ${
+                        active
+                          ? "bg-accent-text text-white"
+                          : "bg-[color:var(--code-bg)] text-fg-muted hover:text-fg"
+                      }`}
+                    >
+                      #{tag}
+                    </button>
+                  );
+                })}
+
+                {presetTags.length === 0 && (
+                  <span className="text-xs text-fg-faint">
+                    没读到 data/tags.json，可以手动加
+                  </span>
+                )}
+              </div>
+
+              {/* 预设不够用时才用这个，平时不用碰 */}
+              <div className="mt-2 flex gap-1.5">
+                <input
+                  value={customTag}
+                  onChange={(e) => setCustomTag(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key !== "Enter") return;
+                    e.preventDefault();
+                    const value = customTag.trim();
+                    if (!value || draft.tags.includes(value)) {
+                      setCustomTag("");
+                      return;
+                    }
+                    setDraft({ ...draft, tags: [...draft.tags, value] });
+                    setCustomTag("");
+                  }}
+                  placeholder="预设里没有？在这里加一个，回车确认"
+                  className="min-w-0 flex-1 rounded-lg border border-[color:var(--glass-brd)] bg-transparent px-2.5 py-1 text-xs outline-none focus:border-accent-text"
+                />
+              </div>
+            </div>
 
             <div className="flex flex-wrap items-center gap-3 text-sm">
               <label className="flex items-center gap-2 text-fg-muted">
