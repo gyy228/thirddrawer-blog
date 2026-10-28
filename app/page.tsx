@@ -22,7 +22,7 @@ export default function HomePage() {
         ) : (
           <ul className="space-y-3">
             {posts.map((post) => (
-              <li key={post.slug}>
+              <li key={post.slug} className="reveal">
                 <PostCard post={post} />
               </li>
             ))}

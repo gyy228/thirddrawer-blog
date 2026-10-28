@@ -21,7 +21,7 @@ export async function NoteCard({ note }: { note: Note }) {
   const hasImages = note.images.length > 0;
 
   return (
-    <article className="glass rounded-2xl px-5 py-4">
+    <article className="glass reveal rounded-2xl px-5 py-4">
       <div className="flex items-start justify-between gap-4">
         <div
           className="note-body min-w-0 flex-1 text-[0.95rem] leading-relaxed text-fg"

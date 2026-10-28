@@ -15,6 +15,27 @@ export const metadata: Metadata = {
     template: `%s · ${siteConfig.title}`,
   },
   description: siteConfig.description,
+  authors: [{ name: siteConfig.author }],
+  creator: siteConfig.author,
+  // RSS 自动发现：阅读器和浏览器靠这个找到订阅地址
+  alternates: {
+    canonical: "/",
+    types: {
+      "application/rss+xml": [{ url: "/rss.xml", title: `${siteConfig.title} 的 RSS` }],
+    },
+  },
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.title,
+    title: `${siteConfig.title} · ${siteConfig.subtitle}`,
+    description: siteConfig.description,
+    locale: "zh_CN",
+  },
+  twitter: {
+    card: "summary",
+    title: `${siteConfig.title} · ${siteConfig.subtitle}`,
+    description: siteConfig.description,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

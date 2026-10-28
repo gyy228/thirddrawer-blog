@@ -36,7 +36,7 @@ export default function FriendsPage() {
       ) : (
         <ul className="grid auto-rows-min gap-3 sm:grid-cols-2">
           {FRIEND_LINKS.map((friend) => (
-            <li key={friend.slug}>
+            <li key={friend.slug} className="reveal">
               <FriendCard friend={friend} />
             </li>
           ))}

@@ -42,7 +42,7 @@ function PhotoGrid({ photos }: { photos: Photo[] }) {
   return (
     <div className="columns-2 gap-3 sm:columns-3">
       {photos.map((photo) => (
-        <figure key={photo.fileName} className="mb-3 break-inside-avoid">
+        <figure key={photo.fileName} className="reveal mb-3 break-inside-avoid">
           <a
             href={photo.src}
             target="_blank"

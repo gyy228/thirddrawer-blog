@@ -150,6 +150,46 @@ body {
 }
 
 /* ────────────────────────────────────────────────
+   滚动渐入
+
+   刻意用 CSS scroll-driven animation 而不是 IntersectionObserver：
+   - 零 JS，首屏不用等水合
+   - 元素默认就是可见的，只在支持的浏览器里才动
+     （用 @supports 守住，不支持的浏览器完全不受影响，不会出现
+      「JS 挂了内容就永远看不见」这种事故）
+
+   和 .lift 配合时要注意：两者都作用于 transform，
+   所以渐入用独立的 keyframes 且动画结束后不留残留值。
+   ──────────────────────────────────────────────── */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: reveal-up linear both;
+    animation-timeline: view();
+    /* 元素刚进入视口下沿时开始，走完 25% 视口高度时结束 */
+    animation-range: entry 0% entry 55%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: none;
+    }
+  }
+}
+
+/* ────────────────────────────────────────────────
    背景光晕
    ──────────────────────────────────────────────── */
 .aurora {
@@ -431,5 +471,24 @@ body {
 
   .lift:hover {
     transform: none;
+  }
+}
+
+/* ────────────────────────────────────────────────
+   打印：保险起见强制显示所有渐入内容
+
+   .reveal 的起始状态是 opacity 0，靠滚动驱动动画才显形。
+   打印时没有「滚动」这个动作，某些浏览器会把还没进入过视口的
+   元素按起始状态输出——纸面上就成了空白。这里直接兜住。
+   ──────────────────────────────────────────────── */
+@media print {
+  .reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .aurora-blob {
+    display: none !important;
   }
 }

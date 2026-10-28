@@ -25,7 +25,12 @@ export function Navbar() {
         </Link>
 
         <div className="flex shrink-0 items-center gap-1">
-          <ul className="hidden items-center gap-1 sm:flex">
+          {/*
+            断点用 md（768）而不是 sm（640）：
+            导航有 8 项，640px 时会把站名挤成「第三...」。
+            低于 768px 一律走汉堡菜单。
+          */}
+          <ul className="hidden items-center gap-1 md:flex">
             {siteConfig.nav.map((item) => (
               <li key={item.href}>
                 <Link
@@ -50,7 +55,7 @@ export function Navbar() {
             aria-label={open ? "关闭菜单" : "打开菜单"}
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
-            className="glass grid size-9 place-items-center rounded-full text-fg-muted sm:hidden"
+            className="glass grid size-9 place-items-center rounded-full text-fg-muted md:hidden"
           >
             {open ? <X className="size-4" /> : <Menu className="size-4" />}
           </button>
@@ -58,7 +63,7 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <ul className="glass mx-auto mt-2 max-w-3xl rounded-2xl p-1 sm:hidden">
+        <ul className="glass mx-auto mt-2 max-w-3xl rounded-2xl p-1 md:hidden">
           {siteConfig.nav.map((item) => (
             <li key={item.href}>
               {/* 点击时直接收起菜单，不靠监听 pathname 的 effect */}

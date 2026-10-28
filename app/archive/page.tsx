@@ -48,7 +48,7 @@ export default function ArchivePage() {
             <h2 className="px-1 font-mono text-sm text-fg-faint">{year}</h2>
             <ul className="space-y-2">
               {list.map((post) => (
-                <li key={post.slug}>
+                <li key={post.slug} className="reveal">
                   <Link
                     href={`/posts/${post.slug}`}
                     className="glass lift flex items-baseline justify-between gap-4 rounded-xl px-4 py-3"

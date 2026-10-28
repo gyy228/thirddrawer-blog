@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.20",
-    "framer-motion": "^14.6.0",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.12.0",

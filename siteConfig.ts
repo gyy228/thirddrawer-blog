@@ -40,11 +40,22 @@ export const siteConfig = {
 
   // ── 站点元信息 ──────────────────────────────────
   /**
-   * 部署后填成正式地址（例如 https://thirddrawer.vercel.app）。
-   * 作为 metadataBase 使用，让元信息里的相对路径能被正确解析。
+   * 站点正式地址，不含末尾斜杠。
+   *
+   * 用途：metadataBase（让元信息里的相对路径解析成绝对地址）、
+   * sitemap.xml、robots.txt、RSS 里的绝对链接。
+   *
+   * 换成自定义域名时改这里，同时要删掉 next.config.ts 的 basePath。
    */
-  siteUrl: "",
+  siteUrl: "https://gyy228.github.io/thirddrawer-blog",
   buildDate: "2026-10-27",
 } as const;
 
 export type SiteConfig = typeof siteConfig;
+
+/** 拼绝对地址，自动处理末尾斜杠 */
+export function absoluteUrl(pathname = "/"): string {
+  const base = siteConfig.siteUrl.replace(/\/$/, "");
+  const path = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  return `${base}${path}`;
+}
