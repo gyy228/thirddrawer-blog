@@ -69,12 +69,24 @@ export function readApiKey() {
   return "";
 }
 
-/** YYYY-MM-DD，按本地时区——选刊是给人看的，用本地日期符合直觉 */
+/**
+ * YYYY-MM-DD，固定按北京时间。
+ *
+ * 不能用本机时区：GitHub 的 runner 是 UTC，而北京比它早 8 小时。
+ * 北京时间 0:00～8:00 之间跑，UTC 还停在前一天，
+ * 算出来的「今天」会变成昨天，于是命中已有草稿直接静默跳过——
+ * 表现为工作流显示成功却什么都没生成。
+ *
+ * 选刊是给人看的，日期应当以你所在的时区为准。
+ */
 export function todayString(date = new Date()) {
-  const y = date.getFullYear();
-  const m = String(date.getMonth() + 1).padStart(2, "0");
-  const d = String(date.getDate()).padStart(2, "0");
-  return `${y}-${m}-${d}`;
+  // en-CA 的日期格式正好是 YYYY-MM-DD
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(date);
 }
 
 export function readJson(file) {

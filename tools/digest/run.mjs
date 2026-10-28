@@ -38,8 +38,9 @@ async function main() {
 
   // 已有草稿时不覆盖，避免误删你改过的内容
   if (fs.existsSync(draftFile) && !force) {
-    console.log(`今天已有草稿：${draftFile}`);
-    console.log("如需重新生成，加 --force");
+    console.log(`今天（北京时间 ${today}）已有草稿：${draftFile}`);
+    console.log("如需重新生成，加 --force（或在 Actions 页面勾选 force 后手动触发）");
+    console.log("本次没有生成新内容。");
     return;
   }
 
