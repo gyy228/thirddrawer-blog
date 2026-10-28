@@ -8,6 +8,7 @@ import { NotesPanel } from "./NotesPanel";
 import { DigestPanel } from "./DigestPanel";
 import { PhotosPanel } from "./PhotosPanel";
 import { DataPanel } from "./DataPanel";
+import { TagsPanel } from "./TagsPanel";
 
 const TABS = [
   { id: "posts", label: "文章" },
@@ -17,6 +18,7 @@ const TABS = [
   { id: "photos", label: "照片" },
   { id: "friends", label: "友链" },
   { id: "about", label: "关于页" },
+  { id: "tags", label: "标签" },
 ] as const;
 
 type TabId = (typeof TABS)[number]["id"];
@@ -78,6 +80,7 @@ function ConsoleShell() {
       {tab === "photos" && <PhotosPanel />}
       {tab === "friends" && <DataPanel kind="friends" />}
       {tab === "about" && <DataPanel kind="about" />}
+      {tab === "tags" && <TagsPanel />}
     </div>
   );
 }
