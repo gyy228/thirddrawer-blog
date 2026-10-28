@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/posts";
 import { getAllNotes } from "@/lib/notes";
+import { getAllDigests } from "@/lib/digests";
 import { absoluteUrl } from "@/siteConfig";
 
 /**
@@ -16,9 +17,10 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();
   const notes = getAllNotes();
+  const digests = getAllDigests();
 
   /** 全站最新内容日期，用来给固定页面一个像样的 lastModified */
-  const latest = [posts[0]?.date, notes[0]?.date]
+  const latest = [posts[0]?.date, notes[0]?.date, digests[0]?.date]
     .filter((d): d is string => Boolean(d))
     .sort()
     .at(-1);
@@ -29,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 这里必须一致，否则爬虫拿到的是需要跳转的地址
   const staticPages: MetadataRoute.Sitemap = [
     { url: absoluteUrl("/"), lastModified, changeFrequency: "weekly", priority: 1 },
+    { url: absoluteUrl("/digest/"), lastModified, changeFrequency: "daily", priority: 0.8 },
     { url: absoluteUrl("/notes/"), lastModified, changeFrequency: "weekly", priority: 0.8 },
     { url: absoluteUrl("/timeline/"), lastModified, changeFrequency: "weekly", priority: 0.7 },
     { url: absoluteUrl("/archive/"), lastModified, changeFrequency: "monthly", priority: 0.6 },
