@@ -23,6 +23,8 @@ export const siteConfig = {
     { href: "/photos", label: "照片" },
     { href: "/friends", label: "友链" },
     { href: "/about", label: "关于" },
+    // 控制台入口。页面本身是公开的，但需要 GitHub 访问令牌才能做任何事。
+    { href: "/console", label: "个人空间" },
   ],
 
   // ── 个人名片 ────────────────────────────────────

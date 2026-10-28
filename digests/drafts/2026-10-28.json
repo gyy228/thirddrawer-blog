@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-28",
+  "status": "draft",
+  "generatedAt": "2026-10-28T14:25:28.877Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "OpenAI 称其模型证明了局部光滑化猜想，并推翻指数时间假设",
+      "url": "https://www.oschina.net/news/503268",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "OpenAI 一次性公布数学、计算机科学、物理三个领域的模型独立发现，包括局部光滑化猜想的证明与推翻指数时间假设，并将证明材料公开，邀请学术界验证。",
+      "publishedAt": "2026-10-28T05:59:31.000Z"
+    },
+    {
+      "id": "2",
+      "title": "如何设计支持 Skills 的 Agent？一套可扩展的四层架构",
+      "url": "https://juejin.cn/post/7701535272555626536",
+      "source": "掘金",
+      "topic": "AI / 机器学习",
+      "summary": "一套支持 Skills 的 Agent 四层架构设计，讨论技能包从 3 个增长到 300 个时如何不改动核心代码，涉及可扩展性与可维护性的工程取舍。",
+      "publishedAt": "2026-10-28T13:05:04.000Z"
+    },
+    {
+      "id": "3",
+      "title": "开源终端模拟器 Ghostty 发布 1.4.0，优化内存占用 & 性能",
+      "url": "https://www.oschina.net/news/503260/ghostty-release-1-4-0",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "开源终端模拟器 Ghostty 发布 1.4.0，历时 7 个月、2889 个提交。发布说明提到 macOS 内核把每次 pty 读取限制在约 1 KiB，解释了此前的性能瓶颈。",
+      "publishedAt": "2026-10-28T02:39:28.000Z"
+    },
+    {
+      "id": "4",
+      "title": "我把热榜那篇\"禁用 axios\"逐条实测了一遍：结论大体对，坑在它没讲的地方",
+      "url": "https://juejin.cn/post/7701604765432135689",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "对热榜「禁用 axios」一文逐条实测：超时与取消请求 fetch 能接住，404 语义是迁移暗坑，并发 401 刷新存在竞态，axios 版重复刷新三次，需补一行判断。",
+      "publishedAt": "2026-10-28T12:30:17.000Z"
+    },
+    {
+      "id": "5",
+      "title": "Manus，刚刚悄悄发布了自己的 2.0 宣言",
+      "url": "http://www.geekpark.net/news/373004",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "Manus 联合创始人张涛谈「用 Manus 改造 Manus」的过程，从给工程师提需求的场景出发，记录产品迭代中的问题与思路，可作为 Agent 产品设计的参考。",
+      "publishedAt": "2026-10-27T08:49:29.000Z"
+    }
+  ]
+}
