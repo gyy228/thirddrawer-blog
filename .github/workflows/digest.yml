@@ -1,0 +1,62 @@
+name: Daily digest draft
+
+# 每天自动抓取订阅源、让模型精选 5 条，把草稿提交到 digests/drafts/。
+# 草稿不会自动发布——你在控制台逐条核对后点发布才会出现在站上。
+
+on:
+  schedule:
+    # 08:00 北京时间 = 00:00 UTC。
+    # GitHub 的定时任务用 UTC，且高峰期可能延迟十几分钟才启动。
+    - cron: "0 0 * * *"
+  # 允许在 Actions 页面手动点一下跑，方便调试
+  workflow_dispatch:
+
+# 需要写权限才能把草稿提交回仓库
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-digest
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # 抓取阶段不需要 Key，先单独跑一次确认 8 个源都通。
+      # 源挂了会在这里失败，而不是等到调模型时才报错，
+      # 排查起来更直接。
+      - name: Check feeds
+        env:
+          SITE_DIR: ${{ github.workspace }}
+        run: node tools/digest/run.mjs --dry
+
+      - name: Generate draft
+        env:
+          SITE_DIR: ${{ github.workspace }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+        run: node tools/digest/run.mjs
+
+      - name: Commit draft
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add digests/drafts
+
+          if git diff --staged --quiet; then
+            echo "今天没有新草稿（可能已经生成过了），跳过提交。"
+            exit 0
+          fi
+
+          git commit -m "content: 生成 $(date -u +%Y-%m-%d) 选刊草稿"
+          git push

@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // 构建/运维脚本，不是应用代码。
+    // tools/digest 是给 GitHub Actions 跑的 Node 脚本，
+    // React/Next 那套规则对它是噪音。
+    "tools/**",
   ]),
 ]);
 
