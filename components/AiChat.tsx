@@ -6,12 +6,16 @@ import { MessageCircle, Send, X } from "lucide-react";
 /**
  * 把底层报错翻译成用户看得懂的话。
  *
- * 浏览器对网络失败抛的是「Failed to fetch」这类原文，对访客毫无意义，
- * 也分不清是自己网络问题还是服务没部署。
+ * 浏览器对网络失败抛的是「Failed to fetch」这类原文，对访客毫无意义。
+ *
+ * 特别说明：导览接口部署在 Cloudflare Workers，而 workers.dev 在国内
+ * 被 DNS 污染（实测阿里/DNSPod 都解析到 Facebook、Dropbox 的 IP），
+ * 所以大陆访客一定会走到这个分支。文案要让人明白是「这个功能需要代理」，
+ * 而不是「你的网站坏了」——站点其他页面确实是好的。
  */
 function toFriendlyError(error: unknown): string {
   if (error instanceof TypeError && /fetch/i.test(error.message)) {
-    return "连不上导览服务。可能是网络问题，也可能服务还没部署好。";
+    return "连不上导览服务。如果你在中国大陆，这个功能需要代理才能访问——站点其他页面不受影响。";
   }
   if (error instanceof Error && error.message) {
     return error.message;
