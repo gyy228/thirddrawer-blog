@@ -77,7 +77,7 @@ function EmptyState() {
   return (
     <div className="glass flex flex-col items-center gap-2 rounded-2xl p-10 text-center">
       <ImageOff className="size-6 text-fg-faint" />
-      <p className="text-sm text-fg-muted">这一格抽屉还是空的。</p>
+      <p className="text-sm text-fg-muted">还没有照片。</p>
       <p className="max-w-sm text-xs leading-relaxed text-fg-faint">
         把图片放进 <span className="font-mono">public/photos/</span> 就会自动出现在这里；
         想加说明文字，在同一个目录下建一个

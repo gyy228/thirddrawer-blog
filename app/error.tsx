@@ -26,7 +26,7 @@ export default function Error({
 
   return (
     <div className="glass mx-auto mt-6 max-w-xl rounded-2xl p-8 text-center">
-      <h1 className="text-lg font-semibold">这一格抽屉卡住了</h1>
+      <h1 className="text-lg font-semibold">页面出了点问题</h1>
       <p className="mt-2 text-sm leading-relaxed text-fg-muted">
         页面渲染时出了点问题。可以先重试一次；如果反复出现，说明是代码里的 bug。
       </p>

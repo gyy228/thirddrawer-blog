@@ -27,7 +27,7 @@ export default function ProjectsPage() {
 
       {projects.length === 0 ? (
         <p className="glass rounded-2xl p-6 text-sm text-fg-muted">
-          抽屉这一格里还是空的。
+          还没有收录项目。
         </p>
       ) : (
         <ul className="space-y-3">

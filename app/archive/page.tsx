@@ -24,7 +24,7 @@ export default function ArchivePage() {
       <header className="px-1">
         <h1 className="text-2xl font-semibold">归档</h1>
         <p className="mt-1 text-sm text-fg-muted">
-          抽屉里一共 {posts.length} 篇。
+          一共 {posts.length} 篇。
         </p>
       </header>
 

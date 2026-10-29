@@ -16,8 +16,7 @@ export default function HomePage() {
 
         {posts.length === 0 ? (
           <p className="glass rounded-2xl p-6 text-sm text-fg-muted">
-            抽屉还是空的。往 <code className="font-mono">posts/</code>{" "}
-            里放一个 Markdown 文件，它就会出现在这里。
+            还没有文章。
           </p>
         ) : (
           <ul className="space-y-3">

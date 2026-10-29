@@ -38,7 +38,7 @@ export default async function TimelinePage() {
       </header>
 
       {groups.length === 0 ? (
-        <p className="glass rounded-2xl p-6 text-sm text-fg-muted">抽屉里还是空的。</p>
+        <p className="glass rounded-2xl p-6 text-sm text-fg-muted">还没有内容。</p>
       ) : (
         groups.map((group) => (
           <section key={group.key}>

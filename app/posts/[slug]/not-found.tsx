@@ -11,7 +11,7 @@ export default function PostNotFound() {
     <GlassCard className="p-10 text-center sm:p-14">
       <p className="font-mono text-5xl font-semibold text-accent-text">404</p>
       <p className="mt-4 text-sm text-fg-muted">
-        这一格抽屉里没有东西——文章可能被删了，或者链接拼错了。
+        这篇文章不存在——可能被删了，或者链接拼错了。
       </p>
       <div className="mt-7 flex flex-wrap justify-center gap-2">
         <Link
