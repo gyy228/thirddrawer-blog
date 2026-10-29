@@ -159,6 +159,148 @@ body {
 }
 
 /* ────────────────────────────────────────────────
+   顶部横幅（首页改版预览用）
+   整块动图铺满，下面直接接内容区。
+   ──────────────────────────────────────────────── */
+.hero-bleed {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  /* 抵消 main 的上内边距，让横幅贴着导航下沿 */
+  margin-top: -2rem;
+}
+
+@media (min-width: 640px) {
+  .hero-bleed {
+    margin-top: -3rem;
+  }
+}
+
+/* 视频淡入，避免解码前闪黑帧 */
+.hero-video {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.hero-video.is-playing {
+  opacity: 1;
+}
+
+/* 压暗 + 底部渐隐到页面底色：白字站得住，也用这道渐变和下面的内容分开 */
+.hero-scrim {
+  /*
+    中段压暗保证白字可读，末尾几档渐变到页面底色 ——
+    这样横幅和下面的内容之间是一道渐隐，而不是一条生硬的分界线。
+  */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(8, 12, 22, 0.16) 0%,
+      rgba(8, 12, 22, 0.1) 40%,
+      rgba(8, 12, 22, 0.18) 88%,
+      var(--bg-a) 100%
+    );
+}
+
+.hero-title {
+  text-shadow:
+    0 2px 4px rgba(8, 12, 22, 0.5),
+    0 6px 28px rgba(8, 12, 22, 0.55);
+}
+
+/*
+  标题底下的一团柔和暗晕。
+  标题是居中偏下，右半截正好压在人物近白的衬衫上（实测白字只有 1.3:1）。
+  整块压暗会毁掉画面，所以只在这块文字后面垫一层无边缘的椭圆渐隐，
+  边缘收到 72% 就完全透明，看起来像画面本身的暗角。
+*/
+.hero-title-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(46rem, 96vw);
+  height: 17rem;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(8, 12, 22, 0.56) 0%,
+    rgba(8, 12, 22, 0.44) 45%,
+    rgba(8, 12, 22, 0) 74%
+  );
+  pointer-events: none;
+}
+
+/*
+  导航专用压暗层。
+  壁纸右半边是近白的衬衫，白字压上去只有 2.2:1。
+  整块压暗会把画面洗掉，所以只在顶部 8rem 内做一道渐隐，
+  到导航下方就完全消失——像给画面盖了一层很薄的暗角。
+*/
+.hero-navscrim {
+  height: 8rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 12, 22, 0.62) 0%,
+    rgba(8, 12, 22, 0.46) 45%,
+    rgba(8, 12, 22, 0) 100%
+  );
+}
+
+/*
+  首页把整页动图关掉：
+  横幅已经铺满上半屏，若整页再铺一层，会变成同一张图重复两次。
+*/
+/*
+  首页：导航浮在横幅上。
+  默认导航是 sticky，会占掉页面顶部约 66px，横幅就只能从它下面开始。
+  这里改成 absolute 脱离文档流——横幅因此能从 y=0 铺起，
+  导航则像浮在画面上的一层，滚动时随页面一起走。
+*/
+body:has(.home-hero) header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* 只让最外层那条胶囊透明；移动端下拉菜单不在 nav 里，仍保留玻璃底 */
+body:has(.home-hero) header > nav {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* 压在图上的文字改成白色，并加一层描边似的阴影保证可读 */
+body:has(.home-hero) header > nav a,
+body:has(.home-hero) header > nav button {
+  color: #fff;
+  /* 两层阴影：近处一层描边似的压住边缘，远处一层把整块区域压暗，
+     这样压在浅色花丛上也不会糊 */
+  text-shadow:
+    0 1px 2px rgba(8, 12, 22, 0.72),
+    0 2px 14px rgba(8, 12, 22, 0.55);
+}
+
+body:has(.home-hero) header > nav a:hover,
+body:has(.home-hero) header > nav button:hover {
+  color: #fff;
+}
+
+body:has(.home-hero) .bg-media,
+body:has(.home-hero) .bg-scrim,
+body:has(.home-hero) .aurora {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    transition: none;
+  }
+}
+
+/* ────────────────────────────────────────────────
    背景动图
    z 轴从后往前：-3 画面 / -2 遮罩 / -1 光晕
    ──────────────────────────────────────────────── */
