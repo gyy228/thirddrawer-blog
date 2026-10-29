@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { BASE_PATH } from "./basePath";
 
 /**
  * 照片墙。
@@ -27,14 +28,6 @@ export interface Photo {
   caption: string;
 }
 
-/**
- * 站点的 basePath。
- *
- * 站点部署在 GitHub Pages 的项目子路径下，public/ 里的资源实际地址是
- * /thirddrawer-blog/photos/xxx。这里必须带上，否则线上全部 404。
- * 换自定义域名时要同步删掉（和 next.config.ts 的 basePath 保持一致）。
- */
-const BASE_PATH = "/thirddrawer-blog";
 
 function readCaptions(): Record<string, string> {
   if (!fs.existsSync(CAPTIONS_FILE)) return {};

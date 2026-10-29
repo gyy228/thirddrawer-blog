@@ -13,10 +13,16 @@
   --bg-b: #fdeef5;
   --bg-c: #e8f8f4;
 
+  /* 背景动图的遮罩。壁纸明暗跨度很大（最暗 22、最亮 246），
+     压得不够文字就糊，压得太狠照片就看不见了。
+     所以分两档：两侧轻、内容列后面重。 */
+  --scrim-edge: rgba(255, 255, 255, 0.4);
+  --scrim-center: rgba(255, 255, 255, 0.76);
+
   /* 文字（对比度经 WCAG AA 4.5:1 校验，见 ROADMAP「无障碍审计」） */
   --fg: #1c2434;
-  --fg-muted: #5a6a80;
-  --fg-faint: #67707d;
+  --fg-muted: #4a5464;
+  --fg-faint: #545c68;
 
   /* 毛玻璃 */
   --glass-bg: rgba(255, 255, 255, 0.6);
@@ -55,9 +61,15 @@
   --bg-b: #16203c;
   --bg-c: #0d2430;
 
+  /* 深色下遮罩要更重：面板本身只有 5% 白，压不住一张亮壁纸 */
+  --scrim-edge: rgba(8, 13, 24, 0.6);
+  --scrim-center: rgba(8, 13, 24, 0.88);
+
   --fg: #e7ecf6;
-  --fg-muted: #97a3ba;
-  --fg-faint: #778292;
+  /* 比纯渐变背景时代更亮：照片压暗后背景不再是近黑，
+     原来的灰阶在照片上只有 3.5:1 */
+  --fg-muted: #a3aec2;
+  --fg-faint: #8f9aac;
 
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-brd: rgba(255, 255, 255, 0.1);
@@ -108,6 +120,66 @@ body {
   font-family: var(--font-stack);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* ────────────────────────────────────────────────
+   背景动图
+   z 轴从后往前：-3 画面 / -2 遮罩 / -1 光晕
+   ──────────────────────────────────────────────── */
+.bg-media {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-media img,
+.bg-media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 视频就绪后再淡入，避免解码前闪一下黑帧 */
+.bg-media video {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.bg-media video.is-playing {
+  opacity: 1;
+}
+
+.bg-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  /* 内容列（max-w-3xl，居中）背后压得更实，两侧留给照片 */
+  background: linear-gradient(
+    to right,
+    var(--scrim-edge) 0%,
+    var(--scrim-center) 18%,
+    var(--scrim-center) 82%,
+    var(--scrim-edge) 100%
+  );
+}
+
+/* 窄屏时内容占满宽度，渐变没有意义，直接用实心遮罩 */
+@media (max-width: 900px) {
+  .bg-scrim {
+    background: var(--scrim-center);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-media video {
+    transition: none;
+  }
 }
 
 ::selection {

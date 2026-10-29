@@ -12,6 +12,7 @@ import {
 } from "@/lib/console/github";
 import type { FileEntry } from "@/lib/console/github";
 import { buildFrontMatter, parseFrontMatter } from "@/lib/console/frontmatter";
+import { BASE_PATH } from "@/lib/basePath";
 
 interface NoteDraft {
   id: string;
@@ -22,7 +23,6 @@ interface NoteDraft {
   sha: string | null;
 }
 
-const BASE_PATH = "/thirddrawer-blog";
 
 function today(): string {
   const d = new Date();
