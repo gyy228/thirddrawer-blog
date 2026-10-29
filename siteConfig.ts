@@ -43,8 +43,17 @@ export const siteConfig = {
      * 与其挂一个点了没反应的按钮，不如先不显示。
      */
     links: {
-      /** 填 QQ 号即可，会自动拼成会话链接 */
+      /**
+       * QQ。
+       *
+       * 点了直接跳 QQ 空间，不再弹号码卡片——
+       * 站长要的是「点一下就看到我的空间」，不是复制号码。
+       * qzone 留空时按 qq 号自动拼成 …/qzone.qq.com/{号}/infocenter
+       */
       qq: "2065738974",
+      /** QQ 空间地址；留空则按上面的号自动拼 */
+      qzone:
+        "https://user.qzone.qq.com/2065738974/infocenter?loginfrom=31",
       /** 填 B 站 UID 数字即可 */
       bilibili: "480076302",
       /** 抖音主页完整链接（带 /user/ 的那种） */

@@ -1,6 +1,6 @@
 import { Mail } from "lucide-react";
 import { siteConfig } from "@/siteConfig";
-import { resolveSocialHref, webMailerFor } from "@/lib/social";
+import { resolveSocialHref, qzoneHref, webMailerFor } from "@/lib/social";
 import { GlassCard } from "./GlassCard";
 import { ContactPopover } from "./ContactPopover";
 import { BilibiliMark, DouyinMark, GithubMark, QQMark } from "./icons";
@@ -14,6 +14,7 @@ import { BilibiliMark, DouyinMark, GithubMark, QQMark } from "./icons";
 export function ProfileCard() {
   const { profile } = siteConfig;
   const initial = profile.name.slice(0, 1).toUpperCase();
+  const qzone = qzoneHref(profile.links.qq, profile.links.qzone);
 
   const socials = [
     { key: "bilibili", label: "哔哩哔哩", Icon: BilibiliMark },
@@ -52,16 +53,19 @@ export function ProfileCard() {
       <p className="mt-1 text-xs text-fg-faint">{profile.tagline}</p>
 
       <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
-        {/* QQ 不是普通外链：临时会话要对方开权限，没开就跳到 QQ 的错误页，
-            所以点开就地显示号码 */}
-        {profile.links.qq.trim() && (
-          <ContactPopover
-            label="QQ"
-            value={profile.links.qq.trim()}
-            hint="在 QQ 里搜索这个号码加好友就能聊。"
-            copyLabel="复制号码"
-            icon={<QQMark className="size-5" />}
-          />
+        {/* QQ 直接跳 QQ 空间。早先这里弹号码卡片，是因为临时会话链接
+            依赖对方账号的隐私设置；空间链接没这个前提 */}
+        {qzone && (
+          <a
+            href={qzone}
+            target="_blank"
+            rel="noreferrer"
+            title="QQ 空间"
+            aria-label="QQ 空间"
+            className={badge}
+          >
+            <QQMark className="size-5" />
+          </a>
         )}
 
         {socials.map(({ key, label, Icon }) => {

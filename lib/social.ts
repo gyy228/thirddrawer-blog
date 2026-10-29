@@ -8,14 +8,28 @@
 
 export type SocialKey = "qq" | "bilibili" | "douyin" | "github";
 
+/**
+ * QQ 空间地址。
+ *
+ * 以前这里拼的是 wpa.qq.com 的临时会话链接，但那个依赖对方账号开启
+ * 「允许通过临时会话找到我」，没开就落到 QQ 的「无法发起临时会话」页面。
+ * 现在改成直接跳 QQ 空间——点一下就能看到内容，不依赖任何设置。
+ */
+export function qzoneHref(qq: string, qzone: string): string | null {
+  const custom = qzone.trim();
+  if (custom) return custom;
+
+  const number = qq.trim();
+  if (!/^\d+$/.test(number)) return null;
+
+  return `https://user.qzone.qq.com/${number}/infocenter`;
+}
+
 /** 返回可点的地址；没配置或为空时返回 null，调用方据此决定要不要渲染 */
 export function resolveSocialHref(key: SocialKey, raw: string): string | null {
   const value = raw.trim();
   if (!value) return null;
 
-  if (key === "qq" && /^\d+$/.test(value)) {
-    return `https://wpa.qq.com/msgrd?v=3&uin=${value}&site=qq&menu=yes`;
-  }
   if (key === "bilibili" && /^\d+$/.test(value)) {
     return `https://space.bilibili.com/${value}`;
   }
