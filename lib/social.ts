@@ -1,9 +1,13 @@
 /**
  * 社交链接的地址拼装。
  *
- * 配置里有的填 ID（QQ 号、B 站 UID），有的填完整链接（抖音），
+ * 配置里有的填 ID（B 站 UID），有的填完整链接（抖音、GitHub），
  * 这里统一成可以直接用的地址。首页名片和关于页共用一份，
  * 免得两处各写一遍、以后改一处漏一处。
+ *
+ * QQ 不走这里：它的临时会话链接依赖对方账号的隐私设置，
+ * 没开就落到 QQ 的「无法发起临时会话」页面，所以改成了弹层显示号码
+ * （见 components/ContactPopover.tsx）。
  */
 
 export type SocialKey = "qq" | "bilibili" | "douyin" | "github";
@@ -13,9 +17,6 @@ export function resolveSocialHref(key: SocialKey, raw: string): string | null {
   const value = raw.trim();
   if (!value) return null;
 
-  if (key === "qq" && /^\d+$/.test(value)) {
-    return `https://wpa.qq.com/msgrd?v=3&uin=${value}&site=qq&menu=yes`;
-  }
   if (key === "bilibili" && /^\d+$/.test(value)) {
     return `https://space.bilibili.com/${value}`;
   }
