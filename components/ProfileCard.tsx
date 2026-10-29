@@ -27,7 +27,11 @@ export function ProfileCard() {
     "grid size-9 place-items-center rounded-full bg-white/92 text-[#1c2434] ring-1 ring-black/5 shadow-sm transition-transform hover:-translate-y-0.5 hover:ring-black/10";
 
   return (
-    <GlassCard className="p-6 text-center">
+    /* relative z-20 是必需的：名片用了毛玻璃（backdrop-filter 会创建层叠上下文），
+       QQ 弹层的 z-index 冲不出这张卡。后面那几张文章卡片在 DOM 里更靠后，
+       会把弹层和其中的按钮盖住——表现为「按钮点不了」。
+       把卡片本身抬到后续兄弟节点之上，弹层才真的在最上层。 */
+    <GlassCard className="relative z-20 p-6 text-center">
       {profile.avatar ? (
         // 本地图片，用原生 img 就够，不必为一个文件引入 next/image
         // eslint-disable-next-line @next/next/no-img-element
@@ -68,7 +72,7 @@ export function ProfileCard() {
               aria-label={label}
               className={badge}
             >
-              <Icon className="size-[18px]" />
+              <Icon className="size-5" />
             </a>
           );
         })}
@@ -80,7 +84,7 @@ export function ProfileCard() {
             aria-label="邮箱"
             className={badge}
           >
-            <Mail className="size-[18px]" />
+            <Mail className="size-5" />
           </a>
         )}
       </div>

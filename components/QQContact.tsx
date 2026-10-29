@@ -116,7 +116,7 @@ export function QQContact({
             : "grid size-9 place-items-center rounded-full bg-white/92 text-[#1c2434] ring-1 ring-black/5 shadow-sm transition-transform hover:-translate-y-0.5 hover:ring-black/10"
         }
       >
-        <QQMark className={variant === "pill" ? "size-3.5" : "size-[18px]"} />
+        <QQMark className={variant === "pill" ? "size-3.5" : "size-5"} />
         {variant === "pill" && "QQ"}
       </button>
 

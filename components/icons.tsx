@@ -27,30 +27,35 @@ const QQ_WHITE = "#fdfdfd";
 const QQ_ORANGE = "#f5a623";
 const QQ_RED = "#e8453c";
 
-/** QQ：黑身白肚、黄嘴黄脚、红围巾的企鹅 */
+/**
+ * QQ：黑身白肚的企鹅。
+ *
+ * 18px 能看清的细节很有限，所以刻意画得比原版更「胖」：
+ * 一个蛋形身体（不再单独画头）、大而分开的眼睛、一整条粗围巾。
+ * 细节越多，小尺寸上越糊成一团。
+ */
 export function QQMark(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      {/* 身体（头身一体，靠一个略大的圆当脑袋） */}
-      <ellipse cx="12" cy="12.6" rx="7.4" ry="8.3" fill={QQ_BLACK} />
-      <circle cx="12" cy="7.6" r="6.6" fill={QQ_BLACK} />
-      {/* 白肚 */}
-      <ellipse cx="12" cy="14.9" rx="4.7" ry="5.3" fill={QQ_WHITE} />
-      {/* 眼睛 */}
-      <ellipse cx="9.5" cy="6.2" rx="1.6" ry="2" fill={QQ_WHITE} />
-      <ellipse cx="14.5" cy="6.2" rx="1.6" ry="2" fill={QQ_WHITE} />
-      <circle cx="9.9" cy="6.6" r=".85" fill={QQ_BLACK} />
-      <circle cx="14.1" cy="6.6" r=".85" fill={QQ_BLACK} />
-      {/* 嘴 */}
-      <ellipse cx="12" cy="9.4" rx="2.3" ry="1.25" fill={QQ_ORANGE} />
-      {/* 围巾 */}
+      {/* 身体：头身一体的蛋形 */}
+      <ellipse cx="12" cy="12.4" rx="7.7" ry="9" fill={QQ_BLACK} />
+      {/* 白肚：范围要够大，露在围巾下面的那截是企鹅最认得出的特征 */}
+      <ellipse cx="12" cy="15.6" rx="4.9" ry="4.9" fill={QQ_WHITE} />
+      {/* 眼睛：眼白大、瞳孔分开，小尺寸才不会糊成一条 */}
+      <ellipse cx="9.3" cy="7.4" rx="1.85" ry="2.35" fill={QQ_WHITE} />
+      <ellipse cx="14.7" cy="7.4" rx="1.85" ry="2.35" fill={QQ_WHITE} />
+      <circle cx="9.85" cy="7.85" r="1" fill={QQ_BLACK} />
+      <circle cx="14.15" cy="7.85" r="1" fill={QQ_BLACK} />
+      {/* 嘴：菱形比椭圆在深色身上更跳 */}
+      <path d="M12 9.2 14.4 10.4 12 11.6 9.6 10.4Z" fill={QQ_ORANGE} />
+      {/* 围巾：收窄成脖子上一圈，别把肚子全盖住 */}
       <path
-        d="M5.2 11.9c1.8 1.15 4.3 1.75 6.8 1.75s5-.6 6.8-1.75l.55 1.85c-2 1.3-4.6 1.95-7.35 1.95s-5.35-.65-7.35-1.95z"
+        d="M4.7 11.5c2.1 1.35 4.6 2 7.3 2s5.2-.65 7.3-2l.55 2.15c-2.3 1.55-4.9 2.3-7.85 2.3s-5.55-.75-7.85-2.3z"
         fill={QQ_RED}
       />
       {/* 脚 */}
-      <ellipse cx="9" cy="20.6" rx="2.2" ry="1.15" fill={QQ_ORANGE} />
-      <ellipse cx="15" cy="20.6" rx="2.2" ry="1.15" fill={QQ_ORANGE} />
+      <ellipse cx="9" cy="21.3" rx="2.35" ry="1.15" fill={QQ_ORANGE} />
+      <ellipse cx="15" cy="21.3" rx="2.35" ry="1.15" fill={QQ_ORANGE} />
     </svg>
   );
 }
