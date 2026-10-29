@@ -1,7 +1,8 @@
 import { Mail } from "lucide-react";
 import { siteConfig } from "@/siteConfig";
 import { GlassCard } from "./GlassCard";
-import { BilibiliMark, DouyinMark, GithubMark, QQMark } from "./icons";
+import { QQContact } from "./QQContact";
+import { BilibiliMark, DouyinMark, GithubMark } from "./icons";
 
 /**
  * 首页个人名片。
@@ -28,7 +29,6 @@ export function ProfileCard() {
   const initial = profile.name.slice(0, 1).toUpperCase();
 
   const socials = [
-    { key: "qq", label: "QQ", Icon: QQMark },
     { key: "bilibili", label: "哔哩哔哩", Icon: BilibiliMark },
     { key: "github", label: "GitHub", Icon: GithubMark },
     { key: "douyin", label: "抖音", Icon: DouyinMark },
@@ -61,6 +61,12 @@ export function ProfileCard() {
       <p className="mt-1 text-xs text-fg-faint">{profile.tagline}</p>
 
       <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
+        {/* QQ 不是普通外链：临时会话要对方开权限，没开就跳到 QQ 的错误页，
+            所以点开就地显示号码 */}
+        {profile.links.qq.trim() && (
+          <QQContact number={profile.links.qq.trim()} />
+        )}
+
         {socials.map(({ key, label, Icon }) => {
           const href = resolveHref(key, profile.links[key]);
           if (!href) return null;
