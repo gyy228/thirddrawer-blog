@@ -44,11 +44,12 @@ export const siteConfig = {
      */
     links: {
       /** 填 QQ 号即可，会自动拼成会话链接 */
-      qq: "",
+      qq: "2065738974",
       /** 填 B 站 UID 数字即可 */
-      bilibili: "",
+      bilibili: "480076302",
       /** 抖音主页完整链接（带 /user/ 的那种） */
-      douyin: "",
+      douyin:
+        "https://www.douyin.com/user/MS4wLjABAAAApNZ6IV9NXvO4GMLCJyO6Chhd-eX-sxNQSJPi6eCw6FM",
       github: "https://github.com/gyy228",
       email: "2065738974@qq.com",
     },
