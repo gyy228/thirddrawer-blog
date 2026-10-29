@@ -15,7 +15,6 @@ import { MusicCard } from "./MusicCard";
 import { CategoryCard } from "./CategoryCard";
 import { StatsCard } from "./StatsCard";
 import { CalendarCard } from "./CalendarCard";
-import { ProfilePlaceholder } from "./ProfilePlaceholder";
 
 export function HomeColumns({
   children,
@@ -36,7 +35,6 @@ export function HomeColumns({
   return (
     <div className="home-wide grid grid-cols-1 gap-4 lg:grid-cols-[15rem_minmax(0,1fr)_15rem] lg:items-start">
       <aside className="order-2 space-y-4 lg:order-1">
-        <ProfilePlaceholder />
         <AnnouncementCard />
         <MusicCard />
         <CategoryCard categories={categories} />
