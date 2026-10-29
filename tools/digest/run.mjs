@@ -1,13 +1,17 @@
 /**
- * 每日选刊生成：抓取 → 配额筛选 → 模型精选 → 存草稿。
+ * 每日选刊生成：抓取 → 配额筛选 → 模型精选 → 保存。
  *
- * 注意：这里只产出**草稿**，不会动站点仓库。
- * 你在控制台审核通过后才会写进 thirddrawer-site/digests/ 并随站点发布。
+ * 两种模式：
+ *   默认        只写草稿到 digests/drafts/，等你在控制台审核
+ *   --publish   直接写进 digests/ 并标记为已发布，站点立刻可见
+ *
+ * GitHub Actions 每天用的是 --publish（站长授权自动发布）。
  *
  * 用法：
- *   node run.mjs             生成今天的草稿
- *   node run.mjs --force     覆盖今天的草稿重新生成
- *   node run.mjs --dry       只抓取和筛选，不调用模型（不花钱）
+ *   node run.mjs              生成今天的草稿
+ *   node run.mjs --publish    生成并直接发布
+ *   node run.mjs --force      覆盖今天已有的内容重新生成
+ *   node run.mjs --dry        只抓取和筛选，不调用模型（不花钱）
  */
 
 import fs from "node:fs";
@@ -20,8 +24,8 @@ import {
   MAX_CANDIDATES,
   MAX_PER_SOURCE,
   PICK_COUNT,
+  SITE_DIGESTS_DIR,
   readApiKey,
-  readJson,
   todayString,
   writeJson,
 } from "./config.mjs";
@@ -29,16 +33,21 @@ import {
 const args = process.argv.slice(2);
 const force = args.includes("--force");
 const dry = args.includes("--dry");
+const publish = args.includes("--publish");
 
 const today = todayString();
-const draftFile = path.join(DRAFTS_DIR, `${today}.json`);
+
+// 输出位置：发布模式写到正式目录，否则写草稿
+const outputDir = publish ? SITE_DIGESTS_DIR : DRAFTS_DIR;
+const draftFile = path.join(outputDir, `${today}.json`);
 
 async function main() {
-  console.log(`\n== 选刊生成 ${today} ==\n`);
+  console.log(`\n== 选刊生成 ${today} ==`);
+  console.log(publish ? "模式：生成后直接发布" : "模式：只生成草稿，等人工审核");
 
-  // 已有草稿时不覆盖，避免误删你改过的内容
+  // 已有内容时不覆盖，避免误删你改过的内容
   if (fs.existsSync(draftFile) && !force) {
-    console.log(`今天（北京时间 ${today}）已有草稿：${draftFile}`);
+    console.log(`今天（北京时间 ${today}）已有${publish ? "已发布内容" : "草稿"}：${draftFile}`);
     console.log("如需重新生成，加 --force（或在 Actions 页面勾选 force 后手动触发）");
     console.log("本次没有生成新内容。");
     return;
@@ -99,7 +108,8 @@ async function main() {
 
   const digest = {
     date: today,
-    status: "draft",
+    // 发布模式下直接标记为已发布，站点构建会读它
+    status: publish ? "published" : "draft",
     generatedAt: new Date().toISOString(),
     itemCount: picked.length,
     items: picked.map((item, i) => ({ id: String(i + 1), ...item })),
@@ -107,14 +117,22 @@ async function main() {
 
   writeJson(draftFile, digest);
 
-  console.log(`\n草稿已保存：${draftFile}`);
+  console.log(
+    publish
+      ? `\n已发布：${draftFile}`
+      : `\n草稿已保存：${draftFile}`,
+  );
   console.log("\n预览：");
   for (const item of digest.items) {
     console.log(`\n[${item.topic}] ${item.title}`);
     console.log(`  ${item.source} · ${item.url}`);
     console.log(`  ${item.summary}`);
   }
-  console.log("\n下一步：在控制台审核后发布。");
+  console.log(
+    publish
+      ? "\n已直接发布，稍后随站点构建上线。想撤下就在控制台「选刊」里下架。"
+      : "\n下一步：在控制台审核后发布。",
+  );
 }
 
 main().catch((error) => {

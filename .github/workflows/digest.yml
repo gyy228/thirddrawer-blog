@@ -1,7 +1,9 @@
-name: Daily digest draft
+name: Daily digest
 
-# 每天自动抓取订阅源、让模型精选 5 条，把草稿提交到 digests/drafts/。
-# 草稿不会自动发布——你在控制台逐条核对后点发布才会出现在站上。
+# 每天自动抓取订阅源、让模型精选 5 条，直接发布到 digests/。
+#
+# 站长已授权自动发布（2026-10-29 起），不再经过人工审核。
+# 内容会随站点构建上线；发现不合适可以在控制台「选刊」里下架或修改。
 
 on:
   schedule:
@@ -12,11 +14,11 @@ on:
   workflow_dispatch:
     inputs:
       force:
-        description: "已有今天的草稿时也重新生成（会覆盖草稿）"
+        description: "已有今天的选刊时也重新生成（会覆盖并重新发布）"
         type: boolean
         default: false
 
-# 需要写权限才能把草稿提交回仓库
+# 需要写权限才能把选刊提交回仓库
 permissions:
   contents: write
 
@@ -45,7 +47,7 @@ jobs:
           SITE_DIR: ${{ github.workspace }}
         run: node tools/digest/run.mjs --dry
 
-      - name: Generate draft
+      - name: Generate and publish
         env:
           SITE_DIR: ${{ github.workspace }}
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
@@ -55,38 +57,46 @@ jobs:
         run: |
           echo "收到的 force 参数：[$FORCE]"
           if [ "$FORCE" = "true" ]; then
-            echo "→ 带 --force 运行（会覆盖今天的草稿）"
-            node tools/digest/run.mjs --force
+            echo "→ 带 --force --publish 运行（覆盖并重新发布今天这期）"
+            node tools/digest/run.mjs --publish --force
           else
-            echo "→ 正常模式（今天已有草稿就跳过）"
-            node tools/digest/run.mjs
+            echo "→ 正常模式（生成后直接发布；今天已有就跳过）"
+            node tools/digest/run.mjs --publish
           fi
 
-      # 明确检查草稿有没有真的生成。
+      # 明确检查产物有没有真的写出来。
       # 之前出过「工作流显示成功但什么都没生成」的情况
-      # （时区算错导致命中已有草稿静默跳过），加这一步让它不再静默。
-      - name: Verify draft exists
+      # （时区算错、max_tokens 用尽、force 拼成空串），加这一步让它不再静默。
+      - name: Verify published digest exists
         run: |
           TODAY=$(TZ=Asia/Shanghai date +%F)
-          if [ -f "digests/drafts/$TODAY.json" ]; then
-            echo "✓ 今天的草稿存在：digests/drafts/$TODAY.json"
-          else
-            echo "✗ 没有生成今天的草稿（预期 digests/drafts/$TODAY.json）"
-            ls -la digests/drafts/ || true
+          FILE="digests/$TODAY.json"
+          if [ ! -f "$FILE" ]; then
+            echo "✗ 没有生成 $FILE"
+            ls -la digests/ || true
             exit 1
           fi
 
-      - name: Commit draft
+          STATUS=$(node -e "console.log(require('./$FILE').status)")
+          COUNT=$(node -e "console.log(require('./$FILE').items.length)")
+          echo "✓ $FILE 存在，status=$STATUS，$COUNT 条"
+
+          if [ "$STATUS" != "published" ]; then
+            echo "✗ status 应该是 published，实际是 $STATUS —— 这期不会出现在站上"
+            exit 1
+          fi
+
+      - name: Commit published digest
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add digests/drafts
+          git add digests
 
           if git diff --staged --quiet; then
-            echo "今天没有新草稿（可能已经生成过了），跳过提交。"
+            echo "今天没有新内容（可能已经生成过了），跳过提交。"
             exit 0
           fi
 
-          git commit -m "content: 生成 $(TZ=Asia/Shanghai date +%F) 选刊草稿"
+          git commit -m "content: 发布 $(TZ=Asia/Shanghai date +%F) 选刊"
           git push
