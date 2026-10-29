@@ -5,6 +5,8 @@
  * 优先改这个文件，而不是翻各个组件。
  */
 
+import { BASE_PATH } from "./lib/basePath";
+
 export const siteConfig = {
   // ── 站点标识 ────────────────────────────────────
   title: "桃之夭夭",
@@ -29,10 +31,24 @@ export const siteConfig = {
 
   // ── 个人名片 ────────────────────────────────────
   profile: {
-    name: "thirddrawer",
+    /** 卡片上显示的名字 */
+    name: "江离辟止",
+    /** 名字下面的小字签名 */
+    tagline: "桃之夭夭，灼灼其华",
     bio: "在代码和生活之间来回徘徊的普通人。",
-    avatar: "", // 留空则显示首字母头像
+    /** public/ 下的头像；留空则退回首字母头像 */
+    avatar: `${BASE_PATH}/images/avatar.jpg`,
+    /**
+     * 社交链接。留空的项不会渲染图标——
+     * 与其挂一个点了没反应的按钮，不如先不显示。
+     */
     links: {
+      /** 填 QQ 号即可，会自动拼成会话链接 */
+      qq: "",
+      /** 填 B 站 UID 数字即可 */
+      bilibili: "",
+      /** 抖音主页完整链接（带 /user/ 的那种） */
+      douyin: "",
       github: "https://github.com/gyy228",
       email: "2065738974@qq.com",
     },
