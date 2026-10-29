@@ -31,6 +31,11 @@
   /* 毛玻璃 */
   --glass-bg: rgba(255, 255, 255, 0.6);
   --glass-brd: rgba(255, 255, 255, 0.78);
+
+  /* 导航条：比卡片更透一点，才像「玻璃」而不是「一块白板」 */
+  --nav-bg: rgba(255, 255, 255, 0.5);
+  --nav-brd: rgba(255, 255, 255, 0.68);
+  --nav-shadow: 0 8px 28px -12px rgba(28, 36, 52, 0.28);
   --glass-hi: rgba(255, 255, 255, 0.95);
   --glass-shadow: 0 10px 34px -14px rgba(28, 36, 52, 0.3);
 
@@ -79,6 +84,10 @@
 
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-brd: rgba(255, 255, 255, 0.1);
+
+  --nav-bg: rgba(16, 24, 40, 0.52);
+  --nav-brd: rgba(255, 255, 255, 0.12);
+  --nav-shadow: 0 10px 30px -14px rgba(0, 0, 0, 0.8);
   --glass-hi: rgba(255, 255, 255, 0.18);
   --glass-shadow: 0 10px 34px -14px rgba(0, 0, 0, 0.75);
 
@@ -234,6 +243,15 @@ body {
   /* 只写标准属性。手写 -webkit- 前缀会和这条被构建工具合并，
      实测标准属性会被整个删掉，导致模糊效果完全不生效。 */
   backdrop-filter: blur(18px) saturate(170%);
+}
+
+/* 导航条：比 .glass 更薄更透，模糊更强——像一块浮在背景上的玻璃 */
+.nav-glass {
+  background: var(--nav-bg);
+  border: 1px solid var(--nav-brd);
+  box-shadow: var(--nav-shadow);
+  /* 同样只写标准属性，见上面 .glass 的注释 */
+  backdrop-filter: blur(22px) saturate(180%);
 }
 
 /* 可抬起的卡片 */

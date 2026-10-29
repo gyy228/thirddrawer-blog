@@ -1,6 +1,19 @@
 import type { SVGProps } from "react";
 
 /**
+ * 站名前的四角星，纯装饰。
+ *
+ * 用 currentColor，跟着导航文字色走，两种主题都不用另配。
+ */
+export function SparkMark(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M12 1.8c.7 4.9 3.2 7.5 8.1 8.2-4.9.7-7.4 3.3-8.1 8.2-.7-4.9-3.2-7.5-8.1-8.2 4.9-.7 7.4-3.3 8.1-8.2Z" />
+    </svg>
+  );
+}
+
+/**
  * 品牌标记。
  *
  * lucide-react 1.x 移除了全部品牌图标（Github 已不存在），这几个只能自绘。

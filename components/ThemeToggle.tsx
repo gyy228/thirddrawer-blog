@@ -11,7 +11,7 @@ export function ThemeToggle() {
       type="button"
       aria-label="切换深浅色主题"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-      className="glass lift grid size-9 place-items-center rounded-full text-fg-muted hover:text-fg"
+      className="grid size-8 place-items-center rounded-full text-fg-muted transition-colors hover:bg-accent-soft hover:text-fg"
     >
       {/* 靠 CSS 按 .dark 切换图标，而不是用 effect 判断是否已挂载，
           这样服务端与客户端首次渲染完全一致，也不触发 hooks lint 规则 */}
