@@ -1,9 +1,9 @@
 import { Mail } from "lucide-react";
 import { siteConfig } from "@/siteConfig";
-import { resolveSocialHref } from "@/lib/social";
+import { resolveSocialHref, webMailerFor } from "@/lib/social";
 import { GlassCard } from "./GlassCard";
-import { QQContact } from "./QQContact";
-import { BilibiliMark, DouyinMark, GithubMark } from "./icons";
+import { ContactPopover } from "./ContactPopover";
+import { BilibiliMark, DouyinMark, GithubMark, QQMark } from "./icons";
 
 /**
  * 首页个人名片。
@@ -55,7 +55,13 @@ export function ProfileCard() {
         {/* QQ 不是普通外链：临时会话要对方开权限，没开就跳到 QQ 的错误页，
             所以点开就地显示号码 */}
         {profile.links.qq.trim() && (
-          <QQContact number={profile.links.qq.trim()} />
+          <ContactPopover
+            label="QQ"
+            value={profile.links.qq.trim()}
+            hint="在 QQ 里搜索这个号码加好友就能聊。"
+            copyLabel="复制号码"
+            icon={<QQMark className="size-5" />}
+          />
         )}
 
         {socials.map(({ key, label, Icon }) => {
@@ -77,15 +83,17 @@ export function ProfileCard() {
           );
         })}
 
+        {/* 邮箱也不再走 mailto：没装邮件客户端的机器点了毫无反应，
+            改成弹层显示地址 + 复制 + 网页版入口 */}
         {profile.links.email && (
-          <a
-            href={`mailto:${profile.links.email}`}
-            title="邮箱"
-            aria-label="邮箱"
-            className={badge}
-          >
-            <Mail className="size-5" />
-          </a>
+          <ContactPopover
+            label="邮箱"
+            value={profile.links.email}
+            hint="复制地址后去邮箱发信。"
+            copyLabel="复制地址"
+            icon={<Mail className="size-5" />}
+            extra={webMailerFor(profile.links.email)}
+          />
         )}
       </div>
     </GlassCard>

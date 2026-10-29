@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Mail } from "lucide-react";
 import { GlassCard } from "@/components/GlassCard";
-import { QQContact } from "@/components/QQContact";
-import { BilibiliMark, DouyinMark, GithubMark } from "@/components/icons";
+import { ContactPopover } from "@/components/ContactPopover";
+import { BilibiliMark, DouyinMark, GithubMark, QQMark } from "@/components/icons";
 import { ABOUT } from "@/lib/about";
-import { resolveSocialHref } from "@/lib/social";
+import { resolveSocialHref, webMailerFor } from "@/lib/social";
 import { siteConfig } from "@/siteConfig";
 
 export const metadata: Metadata = {
@@ -49,9 +49,17 @@ export default function AboutPage() {
         <section className="space-y-2">
           <h2 className="text-sm font-medium text-fg-faint">找到我</h2>
           <div className="flex flex-wrap gap-2">
-            {/* QQ 和首页一样走弹层：临时会话要对方开权限，直接跳会失败 */}
+            {/* QQ 和邮箱都走弹层：前者临时会话要对方开权限，
+                后者 mailto 在没装客户端的机器上点了没反应 */}
             {profile.links.qq.trim() && (
-              <QQContact number={profile.links.qq.trim()} variant="pill" />
+              <ContactPopover
+                label="QQ"
+                value={profile.links.qq.trim()}
+                hint="在 QQ 里搜索这个号码加好友就能聊。"
+                copyLabel="复制号码"
+                variant="pill"
+                icon={<QQMark className="size-3.5" />}
+              />
             )}
 
             {bilibili && (
@@ -86,10 +94,15 @@ export default function AboutPage() {
             )}
 
             {profile.links.email && (
-              <a href={`mailto:${profile.links.email}`} className={pill}>
-                <Mail className="size-3.5" />
-                {profile.links.email}
-              </a>
+              <ContactPopover
+                label="邮箱"
+                value={profile.links.email}
+                hint="复制地址后去邮箱发信。"
+                copyLabel="复制地址"
+                variant="pill"
+                icon={<Mail className="size-3.5" />}
+                extra={webMailerFor(profile.links.email)}
+              />
             )}
           </div>
         </section>

@@ -23,3 +23,30 @@ export function resolveSocialHref(key: SocialKey, raw: string): string | null {
   // 其余原样使用（GitHub、抖音，或用户直接填的完整链接）
   return value;
 }
+
+/**
+ * 邮箱对应的网页版入口。
+ *
+ * `mailto:` 依赖本机装了默认邮件客户端——没装的话点了什么都不发生，
+ * 而现在很多人根本不用客户端。所以给一个网页版兜底。
+ * 认不出的域名就返回 undefined，界面上不显示这个入口，
+ * 免得把人带到别家的登录页。
+ */
+export function webMailerFor(
+  email: string,
+): { href: string; label: string } | undefined {
+  const domain = email.split("@")[1]?.trim().toLowerCase();
+  if (!domain) return undefined;
+
+  const table: Record<string, { href: string; label: string }> = {
+    "qq.com": { href: "https://mail.qq.com", label: "打开 QQ 邮箱" },
+    "foxmail.com": { href: "https://mail.qq.com", label: "打开 QQ 邮箱" },
+    "163.com": { href: "https://mail.163.com", label: "打开网易邮箱" },
+    "126.com": { href: "https://mail.126.com", label: "打开网易邮箱" },
+    "gmail.com": { href: "https://mail.google.com", label: "打开 Gmail" },
+    "outlook.com": { href: "https://outlook.live.com", label: "打开 Outlook" },
+    "hotmail.com": { href: "https://outlook.live.com", label: "打开 Outlook" },
+  };
+
+  return table[domain];
+}

@@ -1,18 +1,20 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { QQMark } from "./icons";
+import type { ReactNode } from "react";
 
 /**
- * QQ 联系方式。
+ * 需要「复制 / 另开页面」而不是直接跳转的联系方式。
  *
- * 为什么不是普通链接：wpa.qq.com 的临时会话依赖对方账号的隐私设置
- * （「允许通过临时会话找到我」）。没开的话点开就是 QQ 的
- * 「抱歉，无法发起临时会话」页面，链接本身没写错，但等于没用。
+ * 为什么有些联系方式不能做普通链接：
+ * - QQ：wpa.qq.com 的临时会话依赖对方账号的隐私设置，
+ *   没开就落到「抱歉，无法发起临时会话」页面。
+ * - 邮箱：`mailto:` 在没配默认邮件客户端的机器上点了毫无反应。
  *
- * 所以点开就地弹出号码，附一个复制按钮——这条路径不依赖任何设置。
- * 朋友在 QQ 里手动加好友即可。
+ * 两者的共同点是「点了可能什么都不发生」，所以统一改成
+ * 就地弹出一块内容：值可选中、能复制、必要时给一个网页版入口。
  */
+
 /**
  * 复制到剪贴板。
  *
@@ -47,18 +49,33 @@ async function tryCopy(text: string): Promise<boolean> {
   }
 }
 
-export function QQContact({
-  number,
+export function ContactPopover({
+  label,
+  value,
+  hint,
+  icon,
   variant = "badge",
+  copyLabel = "复制",
+  extra,
 }: {
-  number: string;
+  /** 弹层顶部的小标题，也是按钮的 aria-label */
+  label: string;
+  /** 要展示和复制的内容 */
+  value: string;
+  /** 正常状态下的说明文字 */
+  hint: string;
+  /** 按钮里的图标（尺寸由调用方通过 className 控制） */
+  icon: ReactNode;
   /** badge = 首页名片的圆形图标；pill = 关于页那种带文字的胶囊 */
   variant?: "badge" | "pill";
+  copyLabel?: string;
+  /** 可选的第二入口，比如「打开 QQ 邮箱」 */
+  extra?: { href: string; label: string };
 }) {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [failed, setFailed] = useState(false);
-  const numberRef = useRef<HTMLParagraphElement>(null);
+  const valueRef = useRef<HTMLParagraphElement>(null);
   const rootRef = useRef<HTMLDivElement>(null);
 
   // 点外面 / 按 Esc 关闭
@@ -82,23 +99,23 @@ export function QQContact({
   }, [open]);
 
   async function copy() {
-    const ok = await tryCopy(number);
+    const ok = await tryCopy(value);
     setCopied(ok);
     setFailed(!ok);
 
     if (ok) {
       window.setTimeout(() => setCopied(false), 1800);
-    } else {
-      // 复制不了就把号码选中，用户按 Ctrl+C 就行
-      const node = numberRef.current;
-      if (node) {
-        const range = document.createRange();
-        range.selectNodeContents(node);
-        const selection = window.getSelection();
-        selection?.removeAllRanges();
-        selection?.addRange(range);
-      }
+      return;
     }
+
+    // 复制不了就把内容选中，用户按 Ctrl+C 就行
+    const node = valueRef.current;
+    if (!node) return;
+    const range = document.createRange();
+    range.selectNodeContents(node);
+    const selection = window.getSelection();
+    selection?.removeAllRanges();
+    selection?.addRange(range);
   }
 
   return (
@@ -106,8 +123,8 @@ export function QQContact({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        title="QQ"
-        aria-label="QQ"
+        title={label}
+        aria-label={label}
         aria-haspopup="dialog"
         aria-expanded={open}
         className={
@@ -116,24 +133,24 @@ export function QQContact({
             : "grid size-9 place-items-center rounded-full bg-white/92 text-[#1c2434] ring-1 ring-black/5 shadow-sm transition-transform hover:-translate-y-0.5 hover:ring-black/10"
         }
       >
-        <QQMark className={variant === "pill" ? "size-3.5" : "size-5"} />
-        {variant === "pill" && "QQ"}
+        {icon}
+        {variant === "pill" && label}
       </button>
 
       {open && (
         <div
           role="dialog"
-          aria-label="QQ 号码"
-          className="absolute left-1/2 top-full z-20 mt-2 w-52 -translate-x-1/2 rounded-xl border border-[color:var(--glass-brd)] bg-[color:var(--popover-bg)] p-3 text-left shadow-xl"
+          aria-label={`${label} 内容`}
+          className="absolute left-1/2 top-full z-20 mt-2 w-56 -translate-x-1/2 rounded-xl border border-[color:var(--glass-brd)] bg-[color:var(--popover-bg)] p-3 text-left shadow-xl"
         >
-          <p className="text-[0.65rem] text-fg-faint">QQ</p>
+          <p className="text-[0.65rem] text-fg-faint">{label}</p>
 
-          {/* 做成独立的块：一眼看出这是可以被选中/复制的号码 */}
+          {/* 独立的块：一眼看出这是可以被选中/复制的内容 */}
           <p
-            ref={numberRef}
-            className="mt-1 select-all rounded-lg bg-black/5 px-2 py-1 font-mono text-sm tracking-wide text-fg"
+            ref={valueRef}
+            className="mt-1 break-all select-all rounded-lg bg-black/5 px-2 py-1 font-mono text-sm text-fg"
           >
-            {number}
+            {value}
           </p>
 
           <button
@@ -141,13 +158,22 @@ export function QQContact({
             onClick={copy}
             className="mt-2 w-full rounded-lg bg-accent-soft px-2 py-1 text-xs text-accent-text transition-colors hover:bg-accent-soft/70"
           >
-            {copied ? "已复制" : "复制号码"}
+            {copied ? "已复制" : copyLabel}
           </button>
 
+          {extra && (
+            <a
+              href={extra.href}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-1.5 block w-full rounded-lg px-2 py-1 text-center text-xs text-accent-text transition-colors hover:bg-accent-soft"
+            >
+              {extra.label}
+            </a>
+          )}
+
           <p className="mt-2 text-[0.65rem] leading-relaxed text-fg-faint">
-            {failed
-              ? "已选中号码，按 Ctrl+C 复制。"
-              : "在 QQ 里搜索这个号码加好友就能聊。"}
+            {failed ? "已选中，按 Ctrl+C 复制。" : hint}
           </p>
         </div>
       )}
