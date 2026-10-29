@@ -7,7 +7,7 @@
 
 export const siteConfig = {
   // ── 站点标识 ────────────────────────────────────
-  title: "第三层抽屉",
+  title: "桃之夭夭",
   subtitle: "拉开看看",
   description: "抽屉里全是说不清有什么用、却舍不得扔的东西。",
   author: "thirddrawer",

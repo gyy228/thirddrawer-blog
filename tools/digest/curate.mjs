@@ -9,7 +9,7 @@
 
 import { API_URL, MODEL } from "./config.mjs";
 
-const SYSTEM_PROMPT = `你是「第三层抽屉」这个个人博客的选刊编辑。
+const SYSTEM_PROMPT = `你是「桃之夭夭」这个个人博客的选刊编辑。
 
 每天从前一天的科技与开发资讯里挑 5 条值得一读的，写给中文读者看。
 

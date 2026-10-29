@@ -15,8 +15,22 @@ import {
   getPostBySlug,
 } from "@/lib/posts";
 
+/**
+ * 没有文章时的占位 slug。
+ *
+ * 静态导出（output: "export"）要求动态路由至少生成一个页面，
+ * 一篇文章都没有时 generateStaticParams 返回空数组会直接构建失败。
+ *
+ * 所以空站时生成这一个地址，页面里立刻 notFound()——
+ * 它会被渲染成 404 页，不会出现在列表、导航或 sitemap 里。
+ * 一旦有了真实文章，这个占位就不会再生成。
+ */
+const EMPTY_SLUG = "__empty__";
+
 export async function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
+  const posts = getAllPosts();
+  if (posts.length === 0) return [{ slug: EMPTY_SLUG }];
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 /**

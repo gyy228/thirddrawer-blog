@@ -1,7 +1,7 @@
 [
   {
     "slug": "thirddrawer-blog",
-    "name": "第三层抽屉",
+    "name": "桃之夭夭",
     "description": "你现在看的这个站。毛玻璃风格的个人博客，配一个本地写作控制台。",
     "detail": "Next.js 静态导出部署在 GitHub Pages；控制台在本地跑，写完文章点一下就把改动推上 GitHub 并自动重新部署。",
     "repo": "https://github.com/gyy228/thirddrawer-blog",
