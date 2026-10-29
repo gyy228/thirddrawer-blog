@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { AiChat } from "@/components/AiChat";
 import { siteConfig } from "@/siteConfig";
+import { BASE_PATH } from "@/lib/basePath";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -35,6 +36,21 @@ export const metadata: Metadata = {
     card: "summary",
     title: `${siteConfig.title} · ${siteConfig.subtitle}`,
     description: siteConfig.description,
+  },
+  /*
+    图标显式写全，不用 app/ 下的文件约定。
+    原因：只要提供了 metadata.icons.icon，Next 就会把文件约定生成的那几条
+    整个替换掉——之前只写 .ico，结果 svg 和 apple 的链接一起消失了。
+    另外路径必须自己带 BASE_PATH，站点部署在 /thirddrawer-blog/ 下。
+  */
+  icons: {
+    icon: [
+      { url: `${BASE_PATH}/icon.svg`, type: "image/svg+xml", sizes: "any" },
+      { url: `${BASE_PATH}/favicon.ico`, sizes: "16x16 32x32 48x48" },
+    ],
+    apple: [
+      { url: `${BASE_PATH}/apple-icon.png`, sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
