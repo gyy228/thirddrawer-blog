@@ -19,6 +19,8 @@ interface Draft {
   tags: string[];
   summary: string;
   draft: boolean;
+  /** 置顶：首页优先展示。控制台漏掉这个字段，保存一次就会把置顶清掉 */
+  pinned: boolean;
   body: string;
   /** 已存在文件的 sha；新建时为 null */
   sha: string | null;
@@ -39,6 +41,7 @@ function emptyDraft(): Draft {
     tags: [],
     summary: "",
     draft: true,
+    pinned: false,
     body: "",
     sha: null,
   };
@@ -143,6 +146,7 @@ export function PostsPanel() {
               .filter(Boolean),
         summary: String(data.summary ?? ""),
         draft: Boolean(data.draft),
+        pinned: Boolean(data.pinned),
         body: body.replace(/^\n+/, ""),
         sha: file.sha,
       });
@@ -176,6 +180,7 @@ export function PostsPanel() {
           tags: draft.tags,
           summary: draft.summary.trim(),
           draft: draft.draft,
+          pinned: draft.pinned,
         },
         draft.body,
       );
@@ -407,6 +412,16 @@ export function PostsPanel() {
                   className="size-4"
                 />
                 存为草稿（不发布）
+              </label>
+
+              <label className="flex items-center gap-2 text-fg-muted">
+                <input
+                  type="checkbox"
+                  checked={draft.pinned}
+                  onChange={(e) => setDraft({ ...draft, pinned: e.target.checked })}
+                  className="size-4"
+                />
+                置顶到首页
               </label>
 
               <button

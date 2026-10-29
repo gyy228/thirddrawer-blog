@@ -13,6 +13,8 @@ export interface PostFrontMatter {
   summary?: string;
   cover?: string;
   draft?: boolean;
+  /** 置顶：首页优先展示 */
+  pinned?: boolean;
 }
 
 /** 归一化之后、供页面使用的文章元信息 */
@@ -24,6 +26,7 @@ export interface PostMeta {
   summary: string;
   cover?: string;
   draft: boolean;
+  pinned: boolean;
 }
 
 export interface Post extends PostMeta {
@@ -53,6 +56,7 @@ function toPostMeta(slug: string, data: PostFrontMatter): PostMeta {
     summary: data.summary ?? "",
     cover: data.cover || undefined,
     draft: Boolean(data.draft),
+    pinned: Boolean(data.pinned),
   };
 }
 
@@ -174,4 +178,44 @@ export function getAdjacentPosts(slug: string): {
     older: posts[index + 1] ?? null,
     newer: posts[index - 1] ?? null,
   };
+}
+/**
+ * 把文章分成「置顶」和「其余」两组。
+ *
+ * 置顶内部仍按日期倒序，其余同理。首页用这个，归档页不用——
+ * 归档要保持纯时间顺序，否则同一年的文章顺序会很奇怪。
+ */
+export function partitionPinned(posts: PostMeta[]): {
+  pinned: PostMeta[];
+  rest: PostMeta[];
+} {
+  return {
+    pinned: posts.filter((post) => post.pinned),
+    rest: posts.filter((post) => !post.pinned),
+  };
+}
+
+/**
+ * 全站正文字数（不含 front-matter、不含空白）。
+ *
+ * 中英混排下按「非空白字符数」算，比 `length` 更接近直觉，
+ * 也不至于把空格和换行算成字数。
+ */
+export function getTotalWordCount(): number {
+  let total = 0;
+
+  for (const post of getAllPosts()) {
+    const full = getPostBySlug(post.slug);
+    if (!full) continue;
+    total += full.content.replace(/\s/g, "").length;
+  }
+
+  return total;
+}
+
+/** 最近一次更新：文章和说说里最新的日期 */
+export function getLastActiveDate(noteDates: string[]): string {
+  const dates = [...getAllPosts().map((p) => p.date), ...noteDates].filter(Boolean);
+  if (dates.length === 0) return "";
+  return dates.sort().at(-1) ?? "";
 }
