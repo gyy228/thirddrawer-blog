@@ -84,6 +84,9 @@ export function MusicCard() {
       <audio
         ref={audioRef}
         src={src || undefined}
+        // 不预加载：一首歌好几 MB，没人点播放就不该占流量
+        preload="none"
+        loop
         onTimeUpdate={(e) => {
           const el = e.currentTarget;
           if (!el.duration) return;
