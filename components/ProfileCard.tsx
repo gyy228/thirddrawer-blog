@@ -7,7 +7,6 @@ import { BilibiliMark, DouyinMark, GithubMark, QQMark } from "./icons";
  * 首页个人名片。
  *
  * 竖排居中：头像 → 名字 → 签名 → 一排社交图标。
- * 头像底下不再放简介——签名已经是一句话了，再多就挤。
  */
 
 /** 有的字段填 ID、有的填整条链接，这里统一成可点的地址 */
@@ -34,6 +33,11 @@ export function ProfileCard() {
     { key: "github", label: "GitHub", Icon: GithubMark },
     { key: "douyin", label: "抖音", Icon: DouyinMark },
   ] as const;
+
+  // 图标底座固定用白片 + 深色图标：
+  // QQ 企鹅和抖音音符本身含黑白色，底座一旦跟着主题变暗就看不见了
+  const badge =
+    "grid size-9 place-items-center rounded-full bg-white/92 text-[#1c2434] ring-1 ring-black/5 shadow-sm transition-transform hover:-translate-y-0.5 hover:ring-black/10";
 
   return (
     <GlassCard className="p-6 text-center">
@@ -69,9 +73,9 @@ export function ProfileCard() {
               rel="noreferrer"
               title={label}
               aria-label={label}
-              className="grid size-9 place-items-center rounded-full bg-accent-soft text-accent-text transition-colors hover:bg-accent-soft/60"
+              className={badge}
             >
-              <Icon className="size-4" />
+              <Icon className="size-[18px]" />
             </a>
           );
         })}
@@ -81,9 +85,9 @@ export function ProfileCard() {
             href={`mailto:${profile.links.email}`}
             title="邮箱"
             aria-label="邮箱"
-            className="grid size-9 place-items-center rounded-full bg-accent-soft text-accent-text transition-colors hover:bg-accent-soft/60"
+            className={badge}
           >
-            <Mail className="size-4" />
+            <Mail className="size-[18px]" />
           </a>
         )}
       </div>
