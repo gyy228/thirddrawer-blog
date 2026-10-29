@@ -1,5 +1,6 @@
 import { Mail } from "lucide-react";
 import { siteConfig } from "@/siteConfig";
+import { resolveSocialHref } from "@/lib/social";
 import { GlassCard } from "./GlassCard";
 import { QQContact } from "./QQContact";
 import { BilibiliMark, DouyinMark, GithubMark } from "./icons";
@@ -9,20 +10,6 @@ import { BilibiliMark, DouyinMark, GithubMark } from "./icons";
  *
  * 竖排居中：头像 → 名字 → 签名 → 一排社交图标。
  */
-
-/** 有的字段填 ID、有的填整条链接，这里统一成可点的地址 */
-function resolveHref(key: string, raw: string): string | null {
-  const value = raw.trim();
-  if (!value) return null;
-
-  if (key === "qq" && /^\d+$/.test(value)) {
-    return `https://wpa.qq.com/msgrd?v=3&uin=${value}&site=qq&menu=yes`;
-  }
-  if (key === "bilibili" && /^\d+$/.test(value)) {
-    return `https://space.bilibili.com/${value}`;
-  }
-  return value;
-}
 
 export function ProfileCard() {
   const { profile } = siteConfig;
@@ -68,7 +55,7 @@ export function ProfileCard() {
         )}
 
         {socials.map(({ key, label, Icon }) => {
-          const href = resolveHref(key, profile.links[key]);
+          const href = resolveSocialHref(key, profile.links[key]);
           if (!href) return null;
 
           return (

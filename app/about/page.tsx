@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Mail } from "lucide-react";
 import { GlassCard } from "@/components/GlassCard";
-import { GithubMark } from "@/components/icons";
+import { QQContact } from "@/components/QQContact";
+import { BilibiliMark, DouyinMark, GithubMark } from "@/components/icons";
 import { ABOUT } from "@/lib/about";
+import { resolveSocialHref } from "@/lib/social";
 import { siteConfig } from "@/siteConfig";
 
 export const metadata: Metadata = {
@@ -11,6 +13,12 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const { profile, title, subtitle, motto } = siteConfig;
+
+  const pill =
+    "glass lift inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs text-fg-muted";
+
+  const bilibili = resolveSocialHref("bilibili", profile.links.bilibili);
+  const douyin = resolveSocialHref("douyin", profile.links.douyin);
 
   return (
     <div className="space-y-6">
@@ -41,22 +49,44 @@ export default function AboutPage() {
         <section className="space-y-2">
           <h2 className="text-sm font-medium text-fg-faint">找到我</h2>
           <div className="flex flex-wrap gap-2">
+            {/* QQ 和首页一样走弹层：临时会话要对方开权限，直接跳会失败 */}
+            {profile.links.qq.trim() && (
+              <QQContact number={profile.links.qq.trim()} variant="pill" />
+            )}
+
+            {bilibili && (
+              <a
+                href={bilibili}
+                target="_blank"
+                rel="noreferrer"
+                className={pill}
+              >
+                <BilibiliMark className="size-3.5" />
+                哔哩哔哩
+              </a>
+            )}
+
             {profile.links.github && (
               <a
                 href={profile.links.github}
                 target="_blank"
                 rel="noreferrer"
-                className="glass lift inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs text-fg-muted"
+                className={pill}
               >
                 <GithubMark className="size-3.5" />
                 GitHub
               </a>
             )}
+
+            {douyin && (
+              <a href={douyin} target="_blank" rel="noreferrer" className={pill}>
+                <DouyinMark className="size-3.5" />
+                抖音
+              </a>
+            )}
+
             {profile.links.email && (
-              <a
-                href={`mailto:${profile.links.email}`}
-                className="glass lift inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs text-fg-muted"
-              >
+              <a href={`mailto:${profile.links.email}`} className={pill}>
                 <Mail className="size-3.5" />
                 {profile.links.email}
               </a>

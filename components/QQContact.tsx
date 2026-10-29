@@ -47,7 +47,14 @@ async function tryCopy(text: string): Promise<boolean> {
   }
 }
 
-export function QQContact({ number }: { number: string }) {
+export function QQContact({
+  number,
+  variant = "badge",
+}: {
+  number: string;
+  /** badge = 首页名片的圆形图标；pill = 关于页那种带文字的胶囊 */
+  variant?: "badge" | "pill";
+}) {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -103,9 +110,14 @@ export function QQContact({ number }: { number: string }) {
         aria-label="QQ"
         aria-haspopup="dialog"
         aria-expanded={open}
-        className="grid size-9 place-items-center rounded-full bg-white/92 text-[#1c2434] ring-1 ring-black/5 shadow-sm transition-transform hover:-translate-y-0.5 hover:ring-black/10"
+        className={
+          variant === "pill"
+            ? "glass lift inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs text-fg-muted"
+            : "grid size-9 place-items-center rounded-full bg-white/92 text-[#1c2434] ring-1 ring-black/5 shadow-sm transition-transform hover:-translate-y-0.5 hover:ring-black/10"
+        }
       >
-        <QQMark className="size-[18px]" />
+        <QQMark className={variant === "pill" ? "size-3.5" : "size-[18px]"} />
+        {variant === "pill" && "QQ"}
       </button>
 
       {open && (
