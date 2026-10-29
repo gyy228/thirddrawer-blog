@@ -4,7 +4,7 @@ import { GlassCard } from "@/components/GlassCard";
 import { ContactPopover } from "@/components/ContactPopover";
 import { BilibiliMark, DouyinMark, GithubMark, QQMark } from "@/components/icons";
 import { ABOUT } from "@/lib/about";
-import { resolveSocialHref, qzoneHref, webMailerFor } from "@/lib/social";
+import { resolveSocialHref, webMailerFor } from "@/lib/social";
 import { siteConfig } from "@/siteConfig";
 
 export const metadata: Metadata = {
@@ -19,7 +19,6 @@ export default function AboutPage() {
 
   const bilibili = resolveSocialHref("bilibili", profile.links.bilibili);
   const douyin = resolveSocialHref("douyin", profile.links.douyin);
-  const qzone = qzoneHref(profile.links.qq, profile.links.qzone);
 
   return (
     <div className="space-y-6">
@@ -50,18 +49,17 @@ export default function AboutPage() {
         <section className="space-y-2">
           <h2 className="text-sm font-medium text-fg-faint">找到我</h2>
           <div className="flex flex-wrap gap-2">
-            {/* QQ 直接跳 QQ 空间；邮箱仍走弹层——
-                mailto 在没装客户端的机器上点了没反应 */}
-            {qzone && (
-              <a
-                href={qzone}
-                target="_blank"
-                rel="noreferrer"
-                className={pill}
-              >
-                <QQMark className="size-3.5" />
-                QQ 空间
-              </a>
+            {/* QQ 和邮箱都走弹层：前者临时会话要对方开权限，
+                后者 mailto 在没装客户端的机器上点了没反应 */}
+            {profile.links.qq.trim() && (
+              <ContactPopover
+                label="QQ"
+                value={profile.links.qq.trim()}
+                hint="在 QQ 里搜索这个号码加好友就能聊。"
+                copyLabel="复制号码"
+                variant="pill"
+                icon={<QQMark className="size-3.5" />}
+              />
             )}
 
             {bilibili && (
