@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-30",
+  "status": "published",
+  "generatedAt": "2026-10-30T03:09:45.611Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "拿注意力层当内存——有人在 Qwen 权重里编译了一颗 RISC-V CPU",
+      "url": "https://www.oschina.net/news/503307/qwenputer-risc-v",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "开发者把一颗 RISC-V CPU 编译进 Qwen 3.5 4B 的权重，并用模型自身的 Gated DeltaNet 注意力层当作内存，项目取名 Qwenputer。这是一次关于权重能否承载计算的边界探索。",
+      "publishedAt": "2026-10-30T02:50:44.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Anthropic 平台负责人：多 Agent 跑起来之后，还有四个工程难题无法解决",
+      "url": "https://www.oschina.net/news/503288/new-problems-for-engineers-to-solve",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "Anthropic 平台负责人 Katelyn Lesse 讲述多 Agent 系统跑起来之后仍未解决的四个工程难题，以及软件工程师工作方式改变带来的身份危机。",
+      "publishedAt": "2026-10-29T03:52:12.000Z"
+    },
+    {
+      "id": "3",
+      "title": "[NAS] 群晖的 admin 账户别忘了禁用",
+      "url": "https://www.v2ex.com/t/1253112#reply0",
+      "source": "V2EX",
+      "topic": "编程 / 工程实践",
+      "summary": "作者当年按教程停用群晖 admin 账户，看到多起案例后复查日志，发现大量针对 admin 的登录尝试。一条成本很低的 NAS 安全自查提醒。",
+      "publishedAt": "2026-10-30T03:04:44.000Z"
+    },
+    {
+      "id": "4",
+      "title": "为什么新模型发布，都要先做一个游戏？",
+      "url": "https://www.ifanr.com/1686650?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "设计 / 产品",
+      "summary": "新模型发布常配一个小游戏或互动 Demo。文章讨论在模型能力竞争的下半场，厂商为什么需要一个大众看得懂的形式来展示新版本。",
+      "publishedAt": "2026-10-29T10:22:21.000Z"
+    },
+    {
+      "id": "5",
+      "title": "「推翻」乔布斯的触屏 MacBook 来了，22999 元起",
+      "url": "http://www.geekpark.net/news/373084",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "苹果发布首款触屏 MacBook Pro，22999 元起，搭载 PROLED XDR 显示屏。文章把它与乔布斯当年判定触屏笔记本行不通的结论放在一起对照。",
+      "publishedAt": "2026-10-28T18:27:03.000Z"
+    }
+  ]
+}
