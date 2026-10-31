@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-31",
+  "status": "published",
+  "generatedAt": "2026-10-31T02:55:41.035Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "万亿参数模型 Mistral Large 4 开放权重，用更少的 token 打平了最高分",
+      "url": "https://www.oschina.net/news/503310/mistral-large-4-oss",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "Mistral 开放万亿参数模型 Large 4 的权重，原生多模态，称是开放权重阵营中编码能力最强的一批，用更少 token 打平最高分，且从零在欧洲自有基础设施上训练完成。",
+      "publishedAt": "2026-10-30T03:30:21.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Pico CSS 停止维护，作者解释称“AI 能直接生成它要做的事”",
+      "url": "https://www.oschina.net/news/503309",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "极简 CSS 框架 Pico CSS 停在 v2.1.1，作者宣布停止维护并归档仓库，不再接受 issue、PR 与新版本，理由直白：AI 已能直接生成它要做的事，文中还把这笔账算了一遍。",
+      "publishedAt": "2026-10-30T03:12:25.000Z"
+    },
+    {
+      "id": "3",
+      "title": "TRAE 开发者个人助理，打响 AI Coding 的下半场",
+      "url": "http://www.geekpark.net/news/373190",
+      "source": "极客公园",
+      "topic": "编程 / 工程实践",
+      "summary": "文章梳理 AI Coding 从「一句话生成页面」到开发者个人助理的转向，讨论代码生成之后的工作流环节如何被接手，适合关注 AI 编程工具演进方向的读者。",
+      "publishedAt": "2026-10-30T05:49:25.000Z"
+    },
+    {
+      "id": "4",
+      "title": "国行 Apple 智能官网正式上线：千问接入，11 月推送",
+      "url": "http://www.geekpark.net/news/373238",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "苹果中国官网发布新闻稿给出 Apple 智能落地时间表：11 月 4 日首批功能随 iOS 开发者 Beta 开放测试，12 月正式推送，Siri 接入阿里千问。",
+      "publishedAt": "2026-10-30T22:26:23.000Z"
+    },
+    {
+      "id": "5",
+      "title": "一日一技｜iPhone 恶意被锁，线上移除流程拆招",
+      "url": "https://sspai.com/post/116686",
+      "source": "少数派",
+      "topic": "设计 / 产品",
+      "summary": "针对购买共享 Apple ID 后被卖家改密、设备遭激活锁锁定的情况，介绍线上移除激活锁的完整操作流程，并说明这类风险的来源，适合用过二手账号的读者。",
+      "publishedAt": "2026-10-29T03:00:00.000Z"
+    }
+  ]
+}
