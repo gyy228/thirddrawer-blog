@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-01",
+  "status": "published",
+  "generatedAt": "2026-11-01T02:48:52.510Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "思科给予一名 27 岁工程师无限 tokens 去重写陈旧代码",
+      "url": "https://www.solidot.org/story?sid=85764",
+      "source": "Solidot",
+      "topic": "AI / 机器学习",
+      "summary": "思科总裁兼首席产品官在采访中透露，公司给一名 27 岁工程师开放无限 token 额度，让他专门重写遗留代码，可作为观察大公司如何用 AI 改造存量系统的样本。",
+      "publishedAt": "2026-10-31T12:59:41.000Z"
+    },
+    {
+      "id": "2",
+      "title": "万亿参数模型 Mistral Large 4 开放权重，用更少的 token 打平了最高分",
+      "url": "https://www.oschina.net/news/503310/mistral-large-4-oss",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "Mistral 开放 Mistral Large 4 权重：1 万亿参数、原生多模态，称是开放权重模型里编码能力最强的一个，且从零开始在欧洲自有基础设施上训练完成。",
+      "publishedAt": "2026-10-30T03:30:21.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Pico CSS 停止维护，作者解释称“AI 能直接生成它要做的事”",
+      "url": "https://www.oschina.net/news/503309",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "以「给语义化 HTML 用的极简 CSS 框架」出名的 Pico CSS 停在 v2.1.1，仓库归档、不再接受 issue 和 PR。作者给出的理由很直接：AI 已经能直接生成它要做的事。",
+      "publishedAt": "2026-10-30T03:12:25.000Z"
+    },
+    {
+      "id": "4",
+      "title": "[分享创造] 买不起频谱仪怎么办：你的 PlutoSDR 可以变成半台频谱仪",
+      "url": "https://www.v2ex.com/t/1253485#reply0",
+      "source": "V2EX",
+      "topic": "编程 / 工程实践",
+      "summary": "免费软件 SweepSA 让 PlutoSDR（顺带支持 HackRF One）充当半台频谱仪，作者还解释了如何借助 AD936x 芯片的 fastlock 功能提升扫频速度。",
+      "publishedAt": "2026-11-01T01:30:38.000Z"
+    },
+    {
+      "id": "5",
+      "title": "个人灵光 2.0 实测：个人 AI 助理的机会和门槛｜AI 上新",
+      "url": "http://www.geekpark.net/news/373244",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "极客公园对个人 AI 助理「灵光 2.0」的实测，并借用扎克伯格披露的 Muse 数据——超千万人设置、购物是最常见用途——讨论这类产品的机会与门槛。",
+      "publishedAt": "2026-11-01T01:41:45.000Z"
+    }
+  ]
+}
