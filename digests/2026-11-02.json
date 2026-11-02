@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-02",
+  "status": "published",
+  "generatedAt": "2026-11-02T02:56:45.079Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "DeepSeek 团队把 Agent 设计成“操作系统”：多任务的上限不该是人的注意力",
+      "url": "https://www.oschina.net/news/503338/deepseek-harness-super-agent",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "DeepSeek Harness 团队发布架构长文，讲述如何把 Agent 设计成类操作系统、做到「永远在线」，并提出单任务上限看模型能力、多任务上限看人的注意力这一观察。",
+      "publishedAt": "2026-11-02T02:39:53.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Google AI Mode 未给网站带来流量",
+      "url": "https://www.solidot.org/story?sid=85767",
+      "source": "Solidot",
+      "topic": "AI / 机器学习",
+      "summary": "Reddit 财报印证了网站方此前的抱怨：Google AI Mode 用生成总结直接回答查询，不再给出链接，几乎不给内容站点带去流量，讨论 AI 搜索对开放网络的影响。",
+      "publishedAt": "2026-11-01T16:46:31.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Postgres 19 迟到了，原因是 LLM 找出了太多老 bug",
+      "url": "https://www.oschina.net/news/503336/postgres-19-is-late-and-its-ais-fault",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "PostgreSQL 19 推迟到 11 月发布，原因之一是测试后期用 LLM 查出太多老 bug，部分重要功能被撤销，打破了该项目十年来相当准时的发布节奏。",
+      "publishedAt": "2026-11-02T02:28:14.000Z"
+    },
+    {
+      "id": "4",
+      "title": "[分享创造] 挂着日本节点，网站一眼就看出我是中国人。所以我写了个工具， 看谁卖了我",
+      "url": "https://www.v2ex.com/t/1253711#reply0",
+      "source": "V2EX",
+      "topic": "编程 / 工程实践",
+      "summary": "作者挂着日本节点仍被网站识别出国籍，于是写了一个页面，把浏览器无需询问就能读到的信息全部列出并串成一段话，展示网站如何给访客画像。",
+      "publishedAt": "2026-11-02T02:53:15.000Z"
+    },
+    {
+      "id": "5",
+      "title": "个人灵光 2.0 实测：个人 AI 助理的机会和门槛｜AI 上新",
+      "url": "http://www.geekpark.net/news/373249",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "对个人 AI 助理「灵光 2.0」的实测文章，结合 Meta 披露的个人智能体使用数据，讨论这类产品当前的机会与门槛，以及购物等高频使用场景。",
+      "publishedAt": "2026-11-01T10:03:12.000Z"
+    }
+  ]
+}
