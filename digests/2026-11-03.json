@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-03",
+  "status": "published",
+  "generatedAt": "2026-11-03T04:14:49.471Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "MIT 团队用 GPT-6 Astra 改写小模型权重，跳过梯度训练提升指令遵循能力",
+      "url": "https://juejin.cn/post/7703738740711194662",
+      "source": "掘金",
+      "topic": "AI / 机器学习",
+      "summary": "MIT CSAIL 提出权重空间编程方法，用 GPT-6 Astra 直接读写模型参数，在 Qwen3.5-0.8B 上只改 0.016% 权重就提升指令遵循能力，不用梯度训练。",
+      "publishedAt": "2026-11-03T03:01:43.000Z"
+    },
+    {
+      "id": "2",
+      "title": "DeepSeek 团队把 Agent 设计成“操作系统”：多任务的上限不该是人的注意力",
+      "url": "https://www.oschina.net/news/503338/deepseek-harness-super-agent",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "DeepSeek Harness 团队发布架构长文，介绍如何把 Agent 设计成「永远在线」的操作系统，并提出单任务上限取决于模型，多任务上限取决于人的注意力。",
+      "publishedAt": "2026-11-02T02:39:53.000Z"
+    },
+    {
+      "id": "3",
+      "title": "租户 A 的验证码，却用了租户 B 的 AccessKey：Forge Admin 修跨租户短信串发",
+      "url": "https://juejin.cn/post/7703531021345669174",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "一篇跨租户短信串发的排查记录：租户 A 的验证码用了租户 B 的 AccessKey，发版重启后所有租户的短信一起失效，文中复盘了配置加载与隔离问题。",
+      "publishedAt": "2026-11-03T02:59:22.000Z"
+    },
+    {
+      "id": "4",
+      "title": "Go 语言重构 Java 项目会提升了多少",
+      "url": "https://www.oschina.net/news/503342",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "作者把 Java 版 SQL2API 平台用 Go 重写，对比重构前后的性能与实现差异并给出具体数据，可作为是否做语言迁移的参考。",
+      "publishedAt": "2026-11-02T05:32:35.000Z"
+    },
+    {
+      "id": "5",
+      "title": "卡帕西用Claude两小时重做了YouTube，每个人都能拥有一个自己的互联网",
+      "url": "https://www.ifanr.com/1687094?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "设计 / 产品",
+      "summary": "卡帕西用 Claude 花两小时重做了一个 YouTube，文章由此讨论 AI 如何降低搭建软件与信息入口的门槛，以及人人拥有自己互联网的可能。",
+      "publishedAt": "2026-11-02T08:03:24.000Z"
+    }
+  ]
+}
