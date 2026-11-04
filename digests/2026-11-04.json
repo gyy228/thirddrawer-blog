@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-04",
+  "status": "published",
+  "generatedAt": "2026-11-04T03:33:07.417Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "纽约时报等起诉 Brave 绕过付费墙抓取内容并提供给 AI 公司",
+      "url": "https://www.solidot.org/story?sid=85788",
+      "source": "Solidot",
+      "topic": "AI / 机器学习",
+      "summary": "《纽约时报》等美国出版商起诉 Brave，指控其抓取网站内容、帮用户绕过付费墙，并把索引数据提供给 AI 公司。事件涉及内容授权与 AI 训练数据来源的版权争议。",
+      "publishedAt": "2026-11-03T16:58:29.000Z"
+    },
+    {
+      "id": "2",
+      "title": "思科给一个 27 岁工程师无限 token，让他重写 98% 的遗留代码",
+      "url": "https://www.oschina.net/news/503367/cisco-unlimited-ai-tokens-rewrite-legacy-code",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "思科首席产品官给一位 27 岁工程师无限量 AI token，让其重写约 98% 的遗留代码。报道讲述这次重构的做法与取舍，可作为 AI 辅助改造老系统的参考。",
+      "publishedAt": "2026-11-03T04:12:02.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Go GC 性能优化实践：从 GOGC、GOMEMLIMIT 到分配热点定位",
+      "url": "https://juejin.cn/post/7703850980559601698",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "从 GOGC、GOMEMLIMIT 两个调优参数讲到分配热点定位，说明 Go 的 GC 虽以低延迟著称，但在内存敏感场景仍要针对性调参，并给出实践思路。",
+      "publishedAt": "2026-11-04T02:15:05.000Z"
+    },
+    {
+      "id": "4",
+      "title": "低代码表单与在线问卷不是一回事：产品定位和技术边界",
+      "url": "https://juejin.cn/post/7703952167346323456",
+      "source": "掘金",
+      "topic": "设计 / 产品",
+      "summary": "低代码表单和在线问卷都能拖拽控件，但前者面向持续运行的业务对象，后者面向一次性调查活动。文章从产品定位讲到技术边界，有助于选型时判断。",
+      "publishedAt": "2026-11-04T03:08:58.000Z"
+    },
+    {
+      "id": "5",
+      "title": "乔布斯的「祖训」和触屏 MacBook，何以同时成立？｜硬哲学",
+      "url": "https://www.ifanr.com/1686623?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "设计 / 产品",
+      "summary": "围绕乔布斯对触屏 Mac 的旧态度与传闻中的触屏 MacBook，讨论两者为何能同时成立，并谈及产品线交接。属于带观点的产品分析，而非参数罗列。",
+      "publishedAt": "2026-11-03T02:09:08.000Z"
+    }
+  ]
+}
