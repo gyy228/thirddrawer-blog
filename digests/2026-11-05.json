@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-05",
+  "status": "published",
+  "generatedAt": "2026-11-05T03:54:10.937Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "[分享创造] [开源] TinyEdit： MacOS 现代化 轻量文本编辑器 SwiftUI",
+      "url": "https://www.v2ex.com/t/1254681#reply0",
+      "source": "V2EX",
+      "topic": "编程 / 工程实践",
+      "summary": "用 SwiftUI 写的开源 macOS 轻量文本编辑器。作者从实际场景出发：AI Agent 产出大量 Markdown、JSON 与 txt 文件需要随时查看修改，而现有编辑器不是过重就是收费。",
+      "publishedAt": "2026-11-05T03:52:47.000Z"
+    },
+    {
+      "id": "2",
+      "title": "仓颉语言原生 Coding Agent：cjh，一个文件就是整个开发团队",
+      "url": "https://www.oschina.net/news/503393",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "用华为仓颉语言从零实现的终端交互式编码代理，可用自然语言描述任务并驱动 Agent 执行，是少见的不依赖主流语言栈的 coding agent 实现，源码已开源。",
+      "publishedAt": "2026-11-04T08:44:14.000Z"
+    },
+    {
+      "id": "3",
+      "title": "AMD 营收预计将首次超过英特尔",
+      "url": "https://www.solidot.org/story?sid=85799",
+      "source": "Solidot",
+      "topic": "AI / 机器学习",
+      "summary": "AMD 第三季度营收 134 亿美元、同比增长 45%，数据中心业务贡献 85 亿美元并增长 97%，营收预计首次超过英特尔；客户端与游戏业务则下滑 8%。",
+      "publishedAt": "2026-11-04T17:20:06.000Z"
+    },
+    {
+      "id": "4",
+      "title": "你不知道的客户端开发：AI 时代下的选型、原生与借力",
+      "url": "https://sspai.com/post/117713",
+      "source": "少数派",
+      "topic": "设计 / 产品",
+      "summary": "讨论 AI 时代客户端开发的技术选型，涉及原生与借力方案如何取舍，并指出选型只是锦上添花，关键仍是先把用户最真实的需求解决好。",
+      "publishedAt": "2026-11-04T12:25:55.000Z"
+    },
+    {
+      "id": "5",
+      "title": "国行 Apple 智能上手：这些功能已经准备好",
+      "url": "https://sspai.com/post/118404",
+      "source": "少数派",
+      "topic": "设计 / 产品",
+      "summary": "iOS 27.3 Beta 中国行版 Apple 智能的上手体验，梳理这套姗姗来迟的系统级 AI 功能在实际使用中的具体细节与表现，可供参考。",
+      "publishedAt": "2026-11-04T02:41:10.000Z"
+    }
+  ]
+}
