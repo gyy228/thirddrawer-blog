@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-06",
+  "status": "published",
+  "generatedAt": "2026-11-06T03:51:47.835Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "百度发布最新基座模型 ERNIE 5.5 Flash Base：效率、开源、高性价比",
+      "url": "https://www.oschina.net/news/503429/ernie-5-5-flash-base",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "百度开源文心 5.5 Flash Base 基座模型，MoE 架构，总参数 2800 亿、每 token 激活 140 亿，训练使用 33.5 万亿 token。可看国产开源基座在效率与成本上的取舍。",
+      "publishedAt": "2026-11-05T11:39:18.000Z"
+    },
+    {
+      "id": "2",
+      "title": "印度金融机构遭黑客利用 AI 工具发动的网络攻击",
+      "url": "https://www.solidot.org/story?sid=85809",
+      "source": "Solidot",
+      "topic": "AI / 机器学习",
+      "summary": "印度 CERT-In 通报，黑客组织「狡猾猎鹰」利用公开可用的 AI 工具自动化入侵非银行贷款机构、金融科技公司与加密货币交易所，反映 AI 正被接入攻击链条。",
+      "publishedAt": "2026-11-05T16:53:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "用 AI 写后端，为什么还是在造轮子？",
+      "url": "https://www.oschina.net/news/503428",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "文章讨论为何用 AI 写后端并未真正提速：接口可以生成，但权限、菜单、工作流、报表、审计日志等配套工作仍要人来处理。适合正把 AI 引入业务开发的团队参考。",
+      "publishedAt": "2026-11-05T10:52:19.000Z"
+    },
+    {
+      "id": "4",
+      "title": "Apple 官网排版细节鉴赏",
+      "url": "https://sspai.com/post/115399",
+      "source": "少数派",
+      "topic": "设计 / 产品",
+      "summary": "少数派从排版细节切入，观察 Apple 官网如何靠这些不起眼的选择累积出品牌价值。对做网页设计与前端实现的读者，是一份可对照的样本。",
+      "publishedAt": "2026-11-05T02:57:22.000Z"
+    },
+    {
+      "id": "5",
+      "title": "MacBook Pro 能触屏了，但这只是它最小的升级｜附选购指南",
+      "url": "https://www.ifanr.com/1687989?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "设计 / 产品",
+      "summary": "爱范儿上手首款触屏 MacBook Pro，认为触控只是这次最小的变化，算力才是重点，文末附选购指南。适合正在观望是否换机的读者。",
+      "publishedAt": "2026-11-05T14:00:13.000Z"
+    }
+  ]
+}
