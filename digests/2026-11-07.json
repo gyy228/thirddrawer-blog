@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-07",
+  "status": "published",
+  "generatedAt": "2026-11-07T03:26:49.829Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "内存省16倍的Lightpanda实测：数字是真的，但并发代码要重写",
+      "url": "https://juejin.cn/post/7704928909189005346",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "实测 Lightpanda 在 2GB 小机上峰值内存 43.4MB，Chrome 为 605MB，约 14 倍差距；但“9 倍快”未复现，且并发模型受限，迁移需重写代码。",
+      "publishedAt": "2026-11-07T02:40:41.000Z"
+    },
+    {
+      "id": "2",
+      "title": "OpenSSH 严重绕过漏洞“sshole”让任意超长密码都能登录 root",
+      "url": "https://www.oschina.net/news/503439/openssh-sshhole",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "OpenSSH 出现名为“sshole”的严重绕过漏洞：在 musl libc 环境下，输入超过 256 字符的任意密码即可登录 root；该问题自 2012 年起潜伏十四年才被发现。",
+      "publishedAt": "2026-11-06T06:41:31.000Z"
+    },
+    {
+      "id": "3",
+      "title": "当 Coding Agent 走进研发团队：腾讯开源了云端自进化研发平台 LoopForge",
+      "url": "https://www.oschina.net/news/503437",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "腾讯开源云端自进化研发平台 LoopForge，针对 Coding Agent 进团队后的断流、多人上下文割裂、Vibe Coding 质量失控与重复踩坑，尝试补齐协作环节。",
+      "publishedAt": "2026-11-06T06:31:36.000Z"
+    },
+    {
+      "id": "4",
+      "title": "一个人用得好 AI，为什么一家公司却用不好？",
+      "url": "http://www.geekpark.net/news/373541",
+      "source": "极客公园",
+      "topic": "AI / 机器学习",
+      "summary": "文章讨论个人用 AI 效率高、企业却难落地的原因：Agent 能独立完成方案、代码和分析，但企业任务往往只是链条一环，协作与流程问题更突出。",
+      "publishedAt": "2026-11-05T09:15:38.000Z"
+    },
+    {
+      "id": "5",
+      "title": "10 月最值得关注的 17 个产品｜明日产品 WATCHLIST",
+      "url": "https://www.ifanr.com/1688060?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "设计 / 产品",
+      "summary": "盘点 10 月值得关注的 17 个产品，属于“明日产品 WATCHLIST”系列，聚焦以充满争议姿态出现、但真正重要的产品。",
+      "publishedAt": "2026-11-06T05:26:24.000Z"
+    }
+  ]
+}
