@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-08",
+  "status": "published",
+  "generatedAt": "2026-11-08T02:54:35.482Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "NVIDIA 开源 Cosmos 3 四款模型，用于交互式世界模拟与自动驾驶场景生成",
+      "url": "https://juejin.cn/post/7705257674057564187",
+      "source": "掘金",
+      "topic": "AI / 机器学习",
+      "summary": "NVIDIA 为 Cosmos 3 新增四个开放权重检查点，都是 160 亿参数 Nano 的后训练版本，覆盖多视角驾驶数据生成、流式仿真、物理控制转视频和双臂机器人动作预测。",
+      "publishedAt": "2026-11-08T02:44:21.000Z"
+    },
+    {
+      "id": "2",
+      "title": "估值 400 亿美元，美国公司，终于做出了中国开源模型的竞对",
+      "url": "http://www.geekpark.net/news/373637",
+      "source": "极客公园",
+      "topic": "AI / 机器学习",
+      "summary": "OpenAI 前 CTO Mira Murati 创立的 Thinking Machines Lab 发布第二代模型 Inkling 2，文章从「美国公司终于做出中国开源模型的竞对」这个角度，讨论它的定位。",
+      "publishedAt": "2026-11-06T12:13:06.000Z"
+    },
+    {
+      "id": "3",
+      "title": "OpenSSH 严重绕过漏洞“sshole”让任意超长密码都能登录 root",
+      "url": "https://www.oschina.net/news/503439/openssh-sshhole",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "musl libc 中一个潜伏了十四年的漏洞「sshole」：只要输入超过 256 个字符的任意密码，就能登录本应无法登录的 root 账号，文章介绍了发现经过与成因。",
+      "publishedAt": "2026-11-06T06:41:31.000Z"
+    },
+    {
+      "id": "4",
+      "title": "当 Coding Agent 走进研发团队：腾讯开源了云端自进化研发平台 LoopForge",
+      "url": "https://www.oschina.net/news/503437",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "腾讯开源了云端自进化研发平台 LoopForge，针对 Coding Agent 进入团队后的上下文割裂、质量失控、重复踩坑等问题，尝试把提效从个人扩展到团队。",
+      "publishedAt": "2026-11-06T06:31:36.000Z"
+    },
+    {
+      "id": "5",
+      "title": "创业者做 Personal Agent，有没有一线生机？",
+      "url": "http://www.geekpark.net/news/373650",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "Personal Agent 概念走红后，行业很快形成「机会属于大厂」的判断；文章从入口级机会归属于大厂这一前提切入，讨论创业者在这个方向是否还有空间。",
+      "publishedAt": "2026-11-08T02:40:20.000Z"
+    }
+  ]
+}
