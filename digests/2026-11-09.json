@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-09",
+  "status": "published",
+  "generatedAt": "2026-11-09T03:15:15.882Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "[程序员] [开源分享] MemDock： Claude Code 和 Codex 的双助手工作台，支持会话互转、记忆和 Skills 管理",
+      "url": "https://www.v2ex.com/t/1255502#reply0",
+      "source": "V2EX",
+      "topic": "编程 / 工程实践",
+      "summary": "MemDock 是管理 Claude Code 与 Codex 两个 AI 编程助手的工作台，支持会话互转、记忆和 Skills 管理，针对旧规则残留、Skill 装在哪里难以查明等问题而做。",
+      "publishedAt": "2026-11-09T03:07:22.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Cordonix 0.4.1 发布：每日后台更新，完善全部 MCP 工具说明",
+      "url": "https://www.oschina.net/news/503467",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "Cordonix 0.4.1 发布，用 C11 实现，为 AI 编程智能体提供可在本地程序执行、文件读写和编码转换的能力，通过 MCP 开放接口；新版补齐了全部 MCP 工具说明。",
+      "publishedAt": "2026-11-07T17:15:32.000Z"
+    },
+    {
+      "id": "3",
+      "title": "具身智能，也到了 API 时刻？",
+      "url": "http://www.geekpark.net/news/373683",
+      "source": "极客公园",
+      "topic": "AI / 机器学习",
+      "summary": "文章讨论具身智能是否到了「API 时刻」：部分具身模型已能跨本体迁移、在一定范围内适应新任务，评测方式也从演示视频转向更可复用的能力。",
+      "publishedAt": "2026-11-09T02:18:55.000Z"
+    },
+    {
+      "id": "4",
+      "title": "创业者做 Personal Agent，有没有一线生机？",
+      "url": "http://www.geekpark.net/news/373650",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "文章讨论创业者做 Personal Agent 是否还有机会。业界多认为入口级机会属于大厂，作者在承认这一概率的前提下，分析创业者可能切入的空间。",
+      "publishedAt": "2026-11-08T02:40:20.000Z"
+    },
+    {
+      "id": "5",
+      "title": "苹果产品那些不够颠覆，却值得被学习的细节",
+      "url": "https://sspai.com/post/118114",
+      "source": "少数派",
+      "topic": "设计 / 产品",
+      "summary": "少数派 Matrix 文章梳理苹果产品中一些不够颠覆、却值得学习的细节，基于真实使用体验，总结其中可供借鉴的产品设计思路。",
+      "publishedAt": "2026-11-08T03:18:54.000Z"
+    }
+  ]
+}
