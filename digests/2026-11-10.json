@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-10",
+  "status": "published",
+  "generatedAt": "2026-11-10T04:55:33.157Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "Anthropic 发布 Fable 5.2 与 Mythos 5.2，声称“8 天写出一个能开机的操作系统”",
+      "url": "https://www.oschina.net/news/503499/claude-fable-and-mythos-5-2",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2，二者实为同一底层模型，区别在防护策略：Fable 带完整网络安全与生物学防护，对所有用户开放。",
+      "publishedAt": "2026-11-10T03:37:45.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Meta发布小模型Muse Ember，智能体基准多项超GPT-6与Claude Haiku 5.5",
+      "url": "https://juejin.cn/post/7706098189942063142",
+      "source": "掘金",
+      "topic": "AI / 机器学习",
+      "summary": "Meta 推出小模型 Muse Ember，官方称其在多项智能体基准上超过 GPT-6 Luna 与 Claude Haiku 5.5，输出 token 更少、响应更快，已可在 Muse 中使用。",
+      "publishedAt": "2026-11-10T03:01:16.000Z"
+    },
+    {
+      "id": "3",
+      "title": "[分享创造] Egg：没有 GC、不写生命周期标注，但内存安全的小语言，编译成 C99",
+      "url": "https://www.v2ex.com/t/1255840#reply0",
+      "source": "V2EX",
+      "topic": "编程 / 工程实践",
+      "summary": "开发者分享自研小语言 Egg：编译成可移植 C99，没有 GC，也不写生命周期标注，而释放后使用、重复释放和内存泄漏都会报为编译错误。",
+      "publishedAt": "2026-11-10T04:26:15.000Z"
+    },
+    {
+      "id": "4",
+      "title": "AI 改完不敢上线？OpenSpec 规约驱动开发实战",
+      "url": "https://juejin.cn/post/7706124316777742379",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "针对 AI 改完代码没人敢上线的问题，文章讲清 OpenSpec 规约驱动开发的五步闭环与四件套产物，并附前端示例、CLI 速查和团队踩坑清单。",
+      "publishedAt": "2026-11-10T03:55:47.000Z"
+    },
+    {
+      "id": "5",
+      "title": "实测 Seedream5.5，豆包想把 AI 作图接进整条工作流",
+      "url": "https://www.ifanr.com/1688447?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "设计 / 产品",
+      "summary": "爱范儿实测字节 Seedream 5.5，关注点在于能否把 AI 作图接进完整工作流，以及反复改图多轮后画面是否依然清晰可用。",
+      "publishedAt": "2026-11-09T12:01:18.000Z"
+    }
+  ]
+}
