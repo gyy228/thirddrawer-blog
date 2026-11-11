@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-11",
+  "status": "published",
+  "generatedAt": "2026-11-11T03:23:12.828Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "IntelliJ IDEA 2026.3 发布：智能体住进 IDE",
+      "url": "https://juejin.cn/post/7706584659240452115",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "IntelliJ IDEA 2026.3 发布，把智能体开发、调试可见性与日常效率的更新一次补齐。文章介绍这版如何在 IDE 内落地 AI 智能体，以及调试可见性方面的改动。",
+      "publishedAt": "2026-11-11T03:19:51.000Z"
+    },
+    {
+      "id": "2",
+      "title": "大模型会吃掉 Harness 吗？Agent 天空上的“两朵乌云”",
+      "url": "https://juejin.cn/post/7706511896069062706",
+      "source": "掘金",
+      "topic": "AI / 机器学习",
+      "summary": "文章提出 Agent 仍有两处未解问题：不能实时响应、不会越用越聪明；并判断模型会逐层吸收外围 Harness 却吃不完整，同时握住两端的产品迭代更快。",
+      "publishedAt": "2026-11-11T02:53:21.000Z"
+    },
+    {
+      "id": "3",
+      "title": "微软宣布 .NET 11",
+      "url": "https://www.solidot.org/story?sid=85851",
+      "source": "Solidot",
+      "topic": "编程 / 工程实践",
+      "summary": "微软公布 .NET 11，属标准支持版本，提供两年支持，上一版 .NET 10 才是长期支持版。改进涵盖 C# 15、ASP.NET Core、.NET MAUI 与 Windows，并缩短构建时间。",
+      "publishedAt": "2026-11-10T16:50:48.000Z"
+    },
+    {
+      "id": "4",
+      "title": "实测 MiniMax H3 Image：GPT 的效果加上 MJ 的审美，居然被它开源了",
+      "url": "https://www.ifanr.com/1688790?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "设计 / 产品",
+      "summary": "作者实测开源的 MiniMax H3 Image 图像模型，称其在指令跟随与画面审美上分别接近 GPT 与 Midjourney，4K 图最快 10 秒生成，并附出图对比。",
+      "publishedAt": "2026-11-10T16:04:24.000Z"
+    },
+    {
+      "id": "5",
+      "title": "千问办公押注 Team Agent，企业 AI 的流水线时刻真的来了",
+      "url": "http://www.geekpark.net/news/373760",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "极客公园围绕千问办公选择 Team Agent 路线展开，讨论团队型智能体在企业办公流程里的落地方式，以及企业 AI 是否进入流水线化的阶段。",
+      "publishedAt": "2026-11-10T04:52:07.000Z"
+    }
+  ]
+}
