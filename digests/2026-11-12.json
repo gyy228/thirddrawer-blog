@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-12",
+  "status": "published",
+  "generatedAt": "2026-11-12T04:33:29.655Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": ".NET 11 正式发布，C# 15 补上了它欠缺二十年的东西",
+      "url": "https://www.oschina.net/news/503542/microsoft-announcing-dotnet-11",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": ".NET 11 于 11 月 10 日发布，属支持两年的 STS 版本，长期支持仍是 .NET 10。文章重点梳理 C# 15 带来的 union types 等实际变化。",
+      "publishedAt": "2026-11-12T03:23:19.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Casvisor 开源：Apache-2.0 的堡垒机，一个 Go 二进制支持 SSH、RDP、VNC、Telnet 与会话录像",
+      "url": "https://www.oschina.net/news/503535",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "Casvisor 以 Apache-2.0 开源，后端用 Go、前端用 React，把 SSH、RDP、VNC、Telnet 四种远程协议的接入、权限与审计做进单个二进制，需自建堡垒机的团队可参考。",
+      "publishedAt": "2026-11-11T10:40:01.000Z"
+    },
+    {
+      "id": "3",
+      "title": "实测 MiniMax H3 Image：GPT 的效果加上 MJ 的审美，居然被它开源了",
+      "url": "https://www.ifanr.com/1688790?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "AI / 机器学习",
+      "summary": "爱范儿实测 MiniMax H3 Image：官方称 4K 像素最快 10 秒生成，评测认为其效果接近 GPT 系列、审美接近 Midjourney，且模型已开源。",
+      "publishedAt": "2026-11-10T16:04:24.000Z"
+    },
+    {
+      "id": "4",
+      "title": "当美国无法建设数据中心，会对 AI 产生怎样的冲击",
+      "url": "http://www.geekpark.net/news/373816",
+      "source": "极客公园",
+      "topic": "AI / 机器学习",
+      "summary": "文章从美国中期选举后 OpenAI 高管讨论重设 2027 年数据中心容量预期切入，分析若美国难以建设数据中心，会对 AI 产业带来什么冲击。",
+      "publishedAt": "2026-11-11T05:23:24.000Z"
+    },
+    {
+      "id": "5",
+      "title": "让老音箱焕发新生：Home Assistant Connect AUX-2 首发体验",
+      "url": "https://sspai.com/post/118921",
+      "source": "少数派",
+      "topic": "设计 / 产品",
+      "summary": "少数派体验 Home Assistant Connect AUX-2：在灯光、传感器等设备已通过 Matter 打通后，用它把家里的老音箱接入多房间音频系统。",
+      "publishedAt": "2026-11-12T03:12:02.000Z"
+    }
+  ]
+}
