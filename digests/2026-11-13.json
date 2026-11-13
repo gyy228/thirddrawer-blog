@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-13",
+  "status": "published",
+  "generatedAt": "2026-11-13T03:48:00.345Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": ".NET 11 正式发布，C# 15 补上了它欠缺二十年的东西",
+      "url": "https://www.oschina.net/news/503542/microsoft-announcing-dotnet-11",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": ".NET 11 于 11 月 10 日发布，是支持两年的 STS 版本，.NET 10 仍是 LTS 选项。文章梳理 C# 15 的 union types 等几处实际变化，并说明新版本值不值得跟。",
+      "publishedAt": "2026-11-12T03:23:19.000Z"
+    },
+    {
+      "id": "2",
+      "title": "[分享创造] 写了个小工具，看家里反代的访问日志，顺手一键把扫描 IP 封到 RouterOS 上",
+      "url": "https://www.v2ex.com/t/1256742#reply0",
+      "source": "V2EX",
+      "topic": "编程 / 工程实践",
+      "summary": "NAS 开公网后，反向代理日志被扫描器大量请求填满。作者觉得 CrowdSec 配合 RouterOS 做封禁的流程不好用，于是写了个小工具：查看访问日志，一键把扫描 IP 封到 RouterOS。",
+      "publishedAt": "2026-11-13T03:21:56.000Z"
+    },
+    {
+      "id": "3",
+      "title": "苹果正在开发一个把 Mac 变成私有 AI 推理服务器的应用",
+      "url": "https://www.oschina.net/news/503540/apple-new-mac-app-coming-to-make-running-local-ai-models-easy",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "爆料人 Aaron Perris 发现苹果内部有个新 Mac 应用 Harbor，其功能描述第一句是「把你的 Mac 变成私有 AI 推理服务器」。这与苹果以往的 AI 方向不同，值得留意后续。",
+      "publishedAt": "2026-11-12T02:58:12.000Z"
+    },
+    {
+      "id": "4",
+      "title": "iPhone Siri AI 体验：距离真正的 AI Phone，苹果还有多远？| 附开通指南",
+      "url": "https://www.ifanr.com/1688980?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "AI / 机器学习",
+      "summary": "爱范儿体验了 iPhone 上的 Siri AI 并附开通指南。文中判断这是一个更好的 Siri，但还不是合格的 Agent，可借此观察苹果距离真正的 AI Phone 还有多远。",
+      "publishedAt": "2026-11-12T10:47:53.000Z"
+    },
+    {
+      "id": "5",
+      "title": "Mac 选购指南 2026 冬季版",
+      "url": "https://sspai.com/post/85735",
+      "source": "少数派",
+      "topic": "设计 / 产品",
+      "summary": "面向 2026 年冬季的 Mac 选购指南。在内存与存储涨价的背景下，为近期确实需要换机的人梳理机型与配置上的取舍，减少选购时的犹豫。",
+      "publishedAt": "2026-11-12T06:42:04.000Z"
+    }
+  ]
+}
