@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-15",
+  "status": "published",
+  "generatedAt": "2026-11-15T03:24:26.141Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "李飞飞最新世界模型正式开放，我用它一句话造出重庆山城",
+      "url": "https://www.ifanr.com/1689379?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "AI / 机器学习",
+      "summary": "李飞飞团队的世界模型正式对外开放，文章记录了用一句话生成重庆山城场景的体验过程，并讨论世界模型领域是否将进入竞争阶段。",
+      "publishedAt": "2026-11-13T10:04:55.000Z"
+    },
+    {
+      "id": "2",
+      "title": "研究生如何用 AI 辅助完成一篇综述：我的科研写作工具与实践经验",
+      "url": "https://sspai.com/post/118153",
+      "source": "少数派",
+      "topic": "AI / 机器学习",
+      "summary": "从研究生视角梳理用 AI 辅助完成文献综述的完整工作流与工具选择，作者认为 AI 改变的是科研写作的完成方式而非写作本身。",
+      "publishedAt": "2026-11-13T07:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "写《Python 之禅》的那个人走了",
+      "url": "https://www.oschina.net/news/503569/in-memoriam-tim-peters-1952-2026",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "Guido van Rossum 在 Python 官方论坛发帖悼念 Tim Peters（1952–2026），这位《Python 之禅》作者于今年 7 月去世。",
+      "publishedAt": "2026-11-13T09:02:57.000Z"
+    },
+    {
+      "id": "4",
+      "title": "[分享创造] [开源] 做了个 Codex 远控桥接器，手机和电脑可以用不同账号",
+      "url": "https://www.v2ex.com/t/1257160#reply0",
+      "source": "V2EX",
+      "topic": "编程 / 工程实践",
+      "summary": "Codex 自带远控要求手机与电脑登录同一 ChatGPT 账号，作者为此开发开源桥接器 Codex RC Bridge，两个账号分别授权配对后即可在手机上使用。",
+      "publishedAt": "2026-11-15T02:27:46.000Z"
+    },
+    {
+      "id": "5",
+      "title": "AI 录音硬件卖的是时间差，窗口可能只剩半年",
+      "url": "http://www.geekpark.net/news/373946",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "从苹果 iOS 27.3 为 Apple Watch 加入 AI 功能切入，讨论 AI 录音硬件依赖的时间差，认为这一窗口可能只剩半年。",
+      "publishedAt": "2026-11-13T04:57:38.000Z"
+    }
+  ]
+}
