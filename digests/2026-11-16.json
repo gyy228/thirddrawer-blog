@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-16",
+  "status": "published",
+  "generatedAt": "2026-11-16T03:25:50.110Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "phimint v0.10.0 发布：卡在「等你输入」的命令上，agent 能自己接上",
+      "url": "https://www.oschina.net/news/503576",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "用 Rust 写的终端轻量 AI 编码 agent，一条命令安装、配好 API key 就能在终端把需求变成可运行代码。v0.10.0 让它在命令卡在「等你输入」时能自行接上，减少人工打断。",
+      "publishedAt": "2026-11-14T04:24:27.000Z"
+    },
+    {
+      "id": "2",
+      "title": "AI 时代，微服务不该再被\"部署复杂\"劝退 —— QuickBlue 用 3 条命令，把整套微服务装进 Docker",
+      "url": "https://www.oschina.net/news/503579",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "QuickBlue 用 3 条命令把整套微服务装进 Docker，文章讲其部署理念与实践，并附命令速查，针对 AI 时代微服务常被「部署复杂」劝退的问题给出做法。",
+      "publishedAt": "2026-11-15T02:20:19.000Z"
+    },
+    {
+      "id": "3",
+      "title": "[分享创造] 做了一个带 AI 助手的聊天工具 Talky，客户端已开源，欢迎试用",
+      "url": "https://www.v2ex.com/t/1257362#reply0",
+      "source": "V2EX",
+      "topic": "编程 / 工程实践",
+      "summary": "基于 TG 开源方案做的聊天工具 Talky，客户端已开源，覆盖桌面、Android 与 Web，支持私聊、群组、频道和贴图，内置 AI 助手 Jarvis 可总结授权会话、记信息与设提醒。",
+      "publishedAt": "2026-11-16T03:10:35.000Z"
+    },
+    {
+      "id": "4",
+      "title": "[分享创造] Hairpin：发布我为自己开发的小工具，找回被 MacBook 刘海挡住的菜单栏图标",
+      "url": "https://www.v2ex.com/t/1257353#reply1",
+      "source": "V2EX",
+      "topic": "设计 / 产品",
+      "summary": "作者为自己写的 macOS 小工具 Hairpin，用来找回被 MacBook 刘海挡住的菜单栏图标。按最简单的需求做：不整理图标、不配规则，只让被遮挡的图标重新可见。",
+      "publishedAt": "2026-11-16T02:58:32.000Z"
+    },
+    {
+      "id": "5",
+      "title": "Aerial Switcher：给 Mac 的航拍壁纸排个时间表",
+      "url": "https://sspai.com/post/118392",
+      "source": "少数派",
+      "topic": "设计 / 产品",
+      "summary": "Aerial Switcher 给 Mac 的航拍壁纸排了张时间表：既然苹果已把同一地点从早到晚拍成壁纸，就让它按时间自动轮换，桌面光线随一天变化。",
+      "publishedAt": "2026-11-15T07:55:16.000Z"
+    }
+  ]
+}
