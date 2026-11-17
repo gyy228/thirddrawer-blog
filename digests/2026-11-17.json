@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-17",
+  "status": "published",
+  "generatedAt": "2026-11-17T05:25:32.727Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "实测腾讯 Hy4 flash：花两毛钱，就能让 AI 从零做个 3D 交互网页",
+      "url": "https://www.ifanr.com/1689653?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "AI / 机器学习",
+      "summary": "实测腾讯 Hy4 flash：约两毛钱成本即可让 AI 从零生成一个 3D 交互网页，并与 DeepSeek V4.1 Flash 对比性价比，可供关注低成本代码生成的人参考。",
+      "publishedAt": "2026-11-16T09:53:01.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Asahi Linux 许可证从 MIT 换成 GPL，因为有人拿 AI 洗了它的代码",
+      "url": "https://www.oschina.net/news/503588/asahi-linux-drops-mit-for-gpl",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "Asahi Linux 将其大部分代码的许可证从 MIT 改为 GPL，起因是有人用 AI 处理过这些代码后仍按 MIT 条款复用。文中记录了一个开源项目在 AI 时代如何调整授权策略。",
+      "publishedAt": "2026-11-16T03:59:50.000Z"
+    },
+    {
+      "id": "3",
+      "title": "一个 100% 用 AI 写代码的工程师，开始担心它把代码库写“脆弱”了",
+      "url": "https://www.oschina.net/news/503586/ai-usage-generates-a-fragile-codebase",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "一位工程师现在 100% 用 AI 生成代码，却开始担心代码库因此变得脆弱。文章讲述他从被裁到全面依赖 LLM 的经历，以及由此产生的工程质量顾虑。",
+      "publishedAt": "2026-11-16T03:23:14.000Z"
+    },
+    {
+      "id": "4",
+      "title": "Rosetta 2 即将退役，Mac 老应用何去何从？",
+      "url": "https://sspai.com/post/118100",
+      "source": "少数派",
+      "topic": "设计 / 产品",
+      "summary": "Apple 经历过从 PowerPC 到 Intel、再到 Apple Silicon 的架构迁移，如今 Rosetta 2 即将退役。文章梳理这款过渡工具的来历，以及依赖它的老 Mac 应用将面临的处境。",
+      "publishedAt": "2026-11-16T07:37:51.000Z"
+    },
+    {
+      "id": "5",
+      "title": "苹果眼镜明年见：没有屏幕，全靠 Siri 撑场面？",
+      "url": "https://www.ifanr.com/1689712?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "设计 / 产品",
+      "summary": "有消息称苹果明年将推出无屏幕智能眼镜，功能主要依靠 Siri。文章讨论这种产品形态的取舍，并对它是否算苹果给出的答案提出疑问。",
+      "publishedAt": "2026-11-16T10:53:45.000Z"
+    }
+  ]
+}
