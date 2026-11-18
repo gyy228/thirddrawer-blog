@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-18",
+  "status": "published",
+  "generatedAt": "2026-11-18T04:52:42.993Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "GPT-6.2 API 降价 20%，为什么老代码直接切过去反而更费钱？",
+      "url": "https://juejin.cn/post/7709137714927812635",
+      "source": "掘金",
+      "topic": "AI / 机器学习",
+      "summary": "GPT-6.2 API 单价降两成，但老代码只换模型名容易踩坑：中途压缩历史对话会让模型重做思考，系统提示词放错参数位置还会按全价重复计费。",
+      "publishedAt": "2026-11-18T04:21:29.000Z"
+    },
+    {
+      "id": "2",
+      "title": "全村希望，千问 4 Max 正式发布，2.4 万亿参数模型「进厂打工」",
+      "url": "http://www.geekpark.net/news/374079",
+      "source": "极客公园",
+      "topic": "AI / 机器学习",
+      "summary": "阿里发布千问 4-Max 旗舰模型，2.4 万亿参数，底座架构重写，官方称单任务成本下降近六成，并已进入真实业务排班使用。",
+      "publishedAt": "2026-11-17T06:41:48.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Agent 只输出计划不调用工具怎么办：从终止信号错位到结果验收的四层防线",
+      "url": "https://juejin.cn/post/7709222846371069971",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "Agent 只输出计划、不调用工具，往往是因为执行循环把「说了」当成「做了」。文章拆解三处终止信号错位，给出四层防线和可复现代码。",
+      "publishedAt": "2026-11-18T04:04:28.000Z"
+    },
+    {
+      "id": "4",
+      "title": "OpenCode 让 Agent 用上你的真实浏览器，连带你的登录状态",
+      "url": "https://www.oschina.net/news/503625/opencode-browse",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "OpenCode 发布 Browse：一个 Chromium 扩展加 MCP server，让编程 Agent 直接使用你已登录各账号的真实浏览器，在折叠标签组里后台开标签页。",
+      "publishedAt": "2026-11-18T02:28:46.000Z"
+    },
+    {
+      "id": "5",
+      "title": "Mac 收紧权限，苹果开始防着 AI 了",
+      "url": "https://www.ifanr.com/1689832?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "设计 / 产品",
+      "summary": "Mac 收紧应用权限，苹果开始防着 AI 了。文章围绕「AI 越自由，人越麻烦」，讨论系统在放开能力与管控风险之间如何取舍。",
+      "publishedAt": "2026-11-17T10:00:27.000Z"
+    }
+  ]
+}
