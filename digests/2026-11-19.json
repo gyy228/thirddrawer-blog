@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-19",
+  "status": "published",
+  "generatedAt": "2026-11-19T04:43:17.236Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "[分享发现] 给 Claude Code / Codex / OpenCode 记一本本地时间账：别把你发呆和点确认的时间算成 AI 干活",
+      "url": "https://www.v2ex.com/t/1258230#reply0",
+      "source": "V2EX",
+      "topic": "编程 / 工程实践",
+      "summary": "为 Claude Code、Codex、OpenCode 等 AI 编程代理记录本地时间账，把等待确认、中途走神和卡在慢命令上的时间与真正干活的时间分开统计，让「一天跑了几小时」有据可查。",
+      "publishedAt": "2026-11-19T04:09:32.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Java 被曝内存损坏漏洞“Java4Shell”，藏在 Base64 解码器里",
+      "url": "https://www.oschina.net/news/503646/java4shell-write-once-rce-everywhere",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "安全团队在 Java 的 Base64 解码器中发现内存损坏漏洞，被称作「Java4Shell」。Java 一向以内存安全著称，漏洞出现在这里颇为反常，值得跟踪修复进展。",
+      "publishedAt": "2026-11-18T11:24:42.000Z"
+    },
+    {
+      "id": "3",
+      "title": "剑桥词典的 2026 年度单词是“人”",
+      "url": "https://www.solidot.org/story?sid=85927",
+      "source": "Solidot",
+      "topic": "AI / 机器学习",
+      "summary": "剑桥词典将 2026 年度词定为「人」。AI 不断模糊人与机器的界限，词典编纂方与 AI 治理研究者由此重新讨论何谓人、人的特质该如何界定。",
+      "publishedAt": "2026-11-18T16:12:14.000Z"
+    },
+    {
+      "id": "4",
+      "title": "OpenAI 和 Meta 联手，打通了 Agent 商业「最后一公里」",
+      "url": "http://www.geekpark.net/news/374075",
+      "source": "极客公园",
+      "topic": "AI / 机器学习",
+      "summary": "Agent 能进门，也能付钱了。文章梳理同日的两场发布会，讲述智能体如何接入商家场景并替用户完成支付，被视为打通 Agent 商业化的最后一公里。",
+      "publishedAt": "2026-11-17T06:24:52.000Z"
+    },
+    {
+      "id": "5",
+      "title": "Mac 收紧权限，苹果开始防着 AI 了",
+      "url": "https://www.ifanr.com/1689832?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "设计 / 产品",
+      "summary": "文章讨论苹果在系统层面收紧权限、防范 AI 应用的做法，指出 AI 越自由、人反而越麻烦，并分析这类限制给实际操作带来的摩擦。",
+      "publishedAt": "2026-11-17T10:00:27.000Z"
+    }
+  ]
+}
