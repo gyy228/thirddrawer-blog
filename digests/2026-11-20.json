@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-20",
+  "status": "published",
+  "generatedAt": "2026-11-20T04:34:48.110Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "IEA 警告称到 2030 年数据中心碳排放量将增加七成",
+      "url": "https://www.solidot.org/story?sid=85937",
+      "source": "Solidot",
+      "topic": "AI / 机器学习",
+      "summary": "国际能源署（IEA）报告警告，到 2030 年数据中心碳排放将增加七成，用电量达到目前的两倍；未来四年 AI 数据中心每年将额外消耗 350 TWh 电力，超过英国全年总用电量。",
+      "publishedAt": "2026-11-19T16:34:10.000Z"
+    },
+    {
+      "id": "2",
+      "title": "跑分狂飙，实测翻车，刚发的 GPT-6.2 暴露了 OpenAI 的软肋",
+      "url": "http://www.geekpark.net/news/374175",
+      "source": "极客公园",
+      "topic": "AI / 机器学习",
+      "summary": "OpenAI 新模型 GPT-6.2 上线后跑分领先，但实测反馈不佳：有创业者称其“基本不可用，不推荐”，开发者社区也有类似评价。文章梳理跑分与真实体验之间的落差。",
+      "publishedAt": "2026-11-18T13:40:28.000Z"
+    },
+    {
+      "id": "3",
+      "title": "NGINX 被曝两个高危 RCE，其中一个在代码里藏了十年",
+      "url": "https://www.oschina.net/news/503679/nginx-http2-rce-vulnerabilities",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "NGINX 被曝两个高危 RCE 漏洞，CVSS 4.0 均为 9.2，未认证攻击者可执行任意代码，触发前提是服务器启用 HTTP/2；其中一个漏洞在代码中已存在十年。运行 NGINX 的服务需留意升级。",
+      "publishedAt": "2026-11-19T09:15:27.000Z"
+    },
+    {
+      "id": "4",
+      "title": "PHP 8.6 正式发布：更快、更安全、更强大",
+      "url": "https://www.oschina.net/news/503695/php-8-6",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "PHP 8.6 于 11 月 19 日正式发布，官方概括为“更快、更安全、更强大”。头号新特性是部分函数应用：可以预先提供函数的一部分参数，用占位符保留其余参数，留待之后补齐。",
+      "publishedAt": "2026-11-20T03:30:12.000Z"
+    },
+    {
+      "id": "5",
+      "title": "浮屏：截图即可「上岛」，还能帮你记录生活",
+      "url": "https://sspai.com/post/118879",
+      "source": "少数派",
+      "topic": "设计 / 产品",
+      "summary": "独立开发者作品“浮屏”，最初只用来解决一杯柠檬水的取餐码问题，后来逐渐扩展成记录生活小片段的工具，可通过截图把信息“上岛”，文章介绍其由来与用法。",
+      "publishedAt": "2026-11-20T02:47:52.000Z"
+    }
+  ]
+}
