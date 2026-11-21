@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-21",
+  "status": "published",
+  "generatedAt": "2026-11-21T04:28:51.790Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "Anthropic 的数论学家声称证明黎曼猜想",
+      "url": "https://www.solidot.org/story?sid=85949",
+      "source": "Solidot",
+      "topic": "AI / 机器学习",
+      "summary": "在 Anthropic 任职的数论学家 Levent Alpöge 声称与 AI 工具 Claude 合作，获得了黎曼猜想的一般性证明，并称已找到该猜想的一个证明线索。结论仍待同行验证。",
+      "publishedAt": "2026-11-20T15:14:05.000Z"
+    },
+    {
+      "id": "2",
+      "title": "哈佛大学研究人员：AI 编程目前的瓶颈是“Code Review”",
+      "url": "https://www.oschina.net/news/503706/harvard-researchers-find-ai-coding-agents-shifted",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "哈佛两位博士候选人的工作论文基于 718 家公司、约 72.6 万名员工的数据，发现使用 AI 编程 Agent 后人均月新增代码行数上升，但瓶颈已转移到 Code Review 环节。",
+      "publishedAt": "2026-11-20T09:00:13.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Ruby 公开披露多个会触发远程代码执行的漏洞",
+      "url": "https://www.oschina.net/news/503699/ruby-lang-multiple-vulnerabilities-in-regexp-and-string",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "Ruby 团队披露正则引擎与字符串大小写转换中的 7 个漏洞，部分已有 PoC 可触发远程代码执行，修复版本为 Ruby 4.0.10、3.4.13 和 3.3.14。",
+      "publishedAt": "2026-11-20T04:03:01.000Z"
+    },
+    {
+      "id": "4",
+      "title": "「北美大豆包」谷歌，终于杀回 AI 牌桌中央",
+      "url": "http://www.geekpark.net/news/374196",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "Google DeepMind 发布 Gemini 4 系列中的 Gemini 4 Neon，这是该系列 7 周内的第四款模型。文章梳理谷歌这轮密集发力的产品策略与市场位置。",
+      "publishedAt": "2026-11-19T06:10:00.000Z"
+    },
+    {
+      "id": "5",
+      "title": "触屏只是它最不起眼的升级｜MacBook PROLED 评测",
+      "url": "https://www.ifanr.com/1690404?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "topic": "设计 / 产品",
+      "summary": "爱范儿对 MacBook PROLED 的评测，认为触屏只是这款新机最不起眼的升级，文章重点讨论了它在其他方面的实际表现与变化。",
+      "publishedAt": "2026-11-20T04:00:17.000Z"
+    }
+  ]
+}
