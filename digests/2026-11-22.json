@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-22",
+  "status": "published",
+  "generatedAt": "2026-11-22T03:42:31.334Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "哪些事交给 agent，人在哪一步介入：Anthropic、OpenAI 和腾讯的三个案例",
+      "url": "https://juejin.cn/post/7710505000665284648",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "梳理 Anthropic 压测、OpenAI 性能排查与腾讯 LoopForge 三个案例，讨论 agent 与人的分工边界：可撤销的操作交给 agent，不可逆的一步留给人确认。",
+      "publishedAt": "2026-11-22T03:23:34.000Z"
+    },
+    {
+      "id": "2",
+      "title": "哈佛大学研究人员：AI 编程目前的瓶颈是“Code Review”",
+      "url": "https://www.oschina.net/news/503706/harvard-researchers-find-ai-coding-agents-shifted",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "哈佛两位博士候选人的工作论文，以 718 家公司、约 72.6 万名员工为样本测算 AI 编程 Agent 的真实效果，指出当前瓶颈出在 Code Review 环节。",
+      "publishedAt": "2026-11-20T09:00:13.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Inkling 2 Mini 实测解析：26.4B 模型把中间层循环跑 3 遍，20GB 内存塞进笔记本",
+      "url": "https://juejin.cn/post/7710225291802656822",
+      "source": "掘金",
+      "topic": "AI / 机器学习",
+      "summary": "26.4B 的 Inkling 2 Mini 把中间层循环跑三遍，从而塞进 20GB 内存的笔记本。文章实测解析其表现，以及本地跑代码模型时参数规模与显存之间的取舍。",
+      "publishedAt": "2026-11-22T00:26:23.000Z"
+    },
+    {
+      "id": "4",
+      "title": "蚂蚁 OceanBase 团队开源 PowerContext，跨对话的 Agent 记忆服务",
+      "url": "https://www.oschina.net/news/503704/oceanbase-powercontex",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "蚂蚁 OceanBase 团队开源的 PowerContext 定位为 agent 的上下文服务，把决策、约束、证据、进度等耐久信息从单次对话中搬出来，使上下文可跨对话延续。",
+      "publishedAt": "2026-11-20T07:55:30.000Z"
+    },
+    {
+      "id": "5",
+      "title": "重控制、轻渲染，达瓦科技的 AI 视频工业路线",
+      "url": "http://www.geekpark.net/news/374303",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "达瓦科技提出重控制、轻渲染的 AI 视频工业路线。文章从专业影视管线的角度，讨论生成视频反复「抽卡」带来的算力与时间成本，以及模型目前的工业级能力边界。",
+      "publishedAt": "2026-11-22T02:03:57.000Z"
+    }
+  ]
+}
