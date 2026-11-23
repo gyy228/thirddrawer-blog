@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-23",
+  "status": "published",
+  "generatedAt": "2026-11-23T04:18:35.098Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "CLAUDE.md、AGENTS.md、Skill 冲突时听谁的：Claude Code 与 Codex 指令优先级实测",
+      "url": "https://juejin.cn/post/7710893312785563691",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "CLAUDE.md、AGENTS.md 与 Skill 同时存在时该听谁的？作者实测 160 次：Codex 完全按 AGENTS.md 执行，Claude Code 取决于写法，且 Codex 超过 32 KiB 会截断。",
+      "publishedAt": "2026-11-23T03:04:50.000Z"
+    },
+    {
+      "id": "2",
+      "title": "微软 CEO 纳德拉承认，VS Code 的护城河被人从终端绕过去了",
+      "url": "https://www.oschina.net/news/503739/nadella-admits-vs-code-faded-in-six-months",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "微软 CEO 纳德拉在《The Pragmatic Engineer》播客中承认，VS Code 做了开发者十年默认工作台，却在约六个月内被终端类工具绕开了护城河。",
+      "publishedAt": "2026-11-23T03:50:52.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Anthropic 到 2028 年使用的电力 98% 来自化石燃料",
+      "url": "https://www.solidot.org/story?sid=85959",
+      "source": "Solidot",
+      "topic": "AI / 机器学习",
+      "summary": "调查显示，刚上市的 Anthropic 到 2028 年所用电力预计 98% 来自化石燃料。美国 AI 数据中心正越来越多依赖自建发电设施，规划装机容量达 177 GW。",
+      "publishedAt": "2026-11-22T15:32:03.000Z"
+    },
+    {
+      "id": "4",
+      "title": "关于混元 4 模型、算力、刷榜与 RSI，姚顺雨回应一切",
+      "url": "http://www.geekpark.net/news/374301",
+      "source": "极客公园",
+      "topic": "AI / 机器学习",
+      "summary": "腾讯首席 AI 科学家姚顺雨与混元团队在 Reddit LocalLLaMA 社区举行首次公开 AMA，回应混元 4 模型、算力、刷榜与 RSI 等开发者关切。",
+      "publishedAt": "2026-11-22T01:56:28.000Z"
+    },
+    {
+      "id": "5",
+      "title": "A2UI 1.0：Agent 画的 UI，6 端都能原生渲染了！",
+      "url": "https://juejin.cn/post/7711033019449262130",
+      "source": "掘金",
+      "topic": "设计 / 产品",
+      "summary": "Google 发布生成式 UI 开放协议 A2UI 1.0 稳定版，让 Agent 生成的界面可在 6 个端原生渲染；文中介绍其定位、核心卖点与 Android 接入方式。",
+      "publishedAt": "2026-11-23T02:52:48.000Z"
+    }
+  ]
+}
