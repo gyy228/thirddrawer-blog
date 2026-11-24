@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-24",
+  "status": "published",
+  "generatedAt": "2026-11-24T07:16:29.746Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "《Claude Code 零基础探索（一）：三十行代码看懂 Agent Loop》",
+      "url": "https://juejin.cn/post/7711542087061569562",
+      "source": "掘金",
+      "topic": "AI / 机器学习",
+      "summary": "作者跟随 learn-claude-code 开源项目拆解 Claude Code 的内部原理，用约三十行代码讲清 Agent Loop 的运转方式，面向想理解 AI 编码工具底层机制的读者。",
+      "publishedAt": "2026-11-24T07:09:54.000Z"
+    },
+    {
+      "id": "2",
+      "title": "智谱官宣 GLM-5.4：采用 Loop Transformer 架构、开启“泛 Coding”能力",
+      "url": "https://www.oschina.net/news/503756",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "智谱发布 GLM-5.4 技术公告：以 750B 为基座，对其中 28 层做两轮循环，采用 Loop Transformer 架构；官方称智能水平达到 2-3T 级模型，并一并列出限制。",
+      "publishedAt": "2026-11-23T10:30:11.000Z"
+    },
+    {
+      "id": "3",
+      "title": "PostgreSQL 19 正式发布",
+      "url": "https://www.oschina.net/news/503754/postgresql-19-released",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "PostgreSQL 19 正式发布。社区讨论的焦点来自一个判断：这是史上 bug 最少的 .0 版本，但有人建议关键生产系统先观望；理由是正式版装机量远大于测试版。",
+      "publishedAt": "2026-11-23T10:15:05.000Z"
+    },
+    {
+      "id": "4",
+      "title": "金额计算：为什么前端不该用浮点数存钱",
+      "url": "https://juejin.cn/post/7711320056622170162",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "文章从购物车、优惠券、红包分摊等场景切入，说明前端用浮点数存金额为何会出现算出 100.00、后端却是 99.99 这类偏差：两边都没报错，账却对不上。",
+      "publishedAt": "2026-11-24T05:44:31.000Z"
+    },
+    {
+      "id": "5",
+      "title": "字节，该造手机了",
+      "url": "http://www.geekpark.net/news/374374",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "文章以「字节，该造手机了」为题，从富智康据称拿下 OpenAI 手机组装订单、首款产品或于 2027 年底至 2028 年面市等供应链消息谈起，梳理相关动向。",
+      "publishedAt": "2026-11-23T15:47:18.000Z"
+    }
+  ]
+}
