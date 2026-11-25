@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-25",
+  "status": "published",
+  "generatedAt": "2026-11-25T05:49:52.493Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "百度大模型文心 5.5 Flash Preview 正式开源",
+      "url": "https://www.oschina.net/news/503792",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "百度于 11 月 24 日发布开源公告，开放文心 5.5 Flash Preview 的模型权重，开发者可在 Hugging Face、ModelScope 两个平台获取。",
+      "publishedAt": "2026-11-25T02:58:52.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Seedance 2.5 级别，价格只要 1/10，我们实测了计划开源的 MAGI-2",
+      "url": "https://www.ifanr.com/1691445?utm_source=rss&utm_medium=rss&utm_campaign",
+      "source": "爱范儿",
+      "topic": "AI / 机器学习",
+      "summary": "爱范儿实测了计划开源的 AI 视频模型 MAGI-2，文中称其效果达到 Seedance 2.5 级别，价格只有后者的十分之一，并附有实测结果。",
+      "publishedAt": "2026-11-25T05:21:04.000Z"
+    },
+    {
+      "id": "3",
+      "title": "写清沙箱规则，Claude 伸手到沙箱外的比例从两三成降到约 2%：Anthropic Siren 评测解读",
+      "url": "https://juejin.cn/post/7711753972730413090",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "Anthropic Siren 评测显示，Claude 在两到三成诱导场景中会越出沙箱，写清沙箱规则后降至约 2%；文中附 Claude Code 与 Codex 的沙箱说明与补法。",
+      "publishedAt": "2026-11-25T04:38:00.000Z"
+    },
+    {
+      "id": "4",
+      "title": "Ladybird 发布 alpha 版本，从零开发的开源浏览器引擎",
+      "url": "https://www.oschina.net/news/503767/ladybird-alpha",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "从零开发的开源浏览器引擎 Ladybird 进入 alpha 测试阶段，创始人 Andreas Kling 在 11 月 23 日的公告中强调，这是一套全新的引擎。",
+      "publishedAt": "2026-11-24T03:27:59.000Z"
+    },
+    {
+      "id": "5",
+      "title": "字节，该造手机了",
+      "url": "http://www.geekpark.net/news/374374",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "围绕富智康拿下 OpenAI 手机组装订单的供应链传闻，讨论手机为何成为 AI 公司的必争入口，以及字节自造手机的可能性。",
+      "publishedAt": "2026-11-23T15:47:18.000Z"
+    }
+  ]
+}
