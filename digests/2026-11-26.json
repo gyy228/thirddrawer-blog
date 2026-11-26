@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-26",
+  "status": "published",
+  "generatedAt": "2026-11-26T05:40:22.579Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "污染 0.1% 的预训练数据，就能给 AI 智能体埋下洗不掉的后门",
+      "url": "https://www.oschina.net/news/503823",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "一篇题为《Agentic Backdoors via Pretraining Poisoning》的论文指出，只污染 0.1% 的预训练数据就能给 AI 智能体植入后门，且用完全干净的数据做微调和强化学习也无法清除。",
+      "publishedAt": "2026-11-26T03:58:54.000Z"
+    },
+    {
+      "id": "2",
+      "title": "2240 亿参数的 Hy4 flash 模型，现在能跑在 64GB 的 Mac mini 上",
+      "url": "https://www.oschina.net/news/503813",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "腾讯混元开源 2240 亿参数 Hy4 flash 的 GGUF 量化权重与推理代码，最小版本权重约为原始三成，官方实测在 48GB 显存设备上生成速度最高达每秒 89 个 token。",
+      "publishedAt": "2026-11-25T09:03:51.000Z"
+    },
+    {
+      "id": "3",
+      "title": "iFood 把 coding agent 做成内部 API：每次 4 美分怎么做到，我们照着搭了一个实测",
+      "url": "https://juejin.cn/post/7712155094871572489",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "iFood 把 coding agent 做成内部 API，覆盖 15000 多个仓库，单次成本约 4 美分；作者用 Claude Code 和 Codex 各跑 32 次，照着搭了一个最小可用版本。",
+      "publishedAt": "2026-11-26T04:18:01.000Z"
+    },
+    {
+      "id": "4",
+      "title": "Spring AI 还是 LangChain4j？2026 年 Java 接入大模型，我把这笔「架构赌注」的账算清楚了",
+      "url": "https://juejin.cn/post/7712084377979093033",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "围绕 Java 接入大模型该选 Spring AI 还是 LangChain4j，作者结合一次技术评审经历拆解选型代价，认为真正昂贵的并非选错框架，而是把框架类型写进了业务架构。",
+      "publishedAt": "2026-11-26T03:37:54.000Z"
+    },
+    {
+      "id": "5",
+      "title": "App+1｜Yab：开源、AI 友好的双内核浏览器，给舍不得 Arc 的你",
+      "url": "https://sspai.com/post/119310",
+      "source": "少数派",
+      "topic": "设计 / 产品",
+      "summary": "Yab 是一款开源、对 AI 友好的双内核浏览器，在继承 Arc 交互设计的同时为 AI 使用另开入口，适合仍舍不得 Arc 的用户了解替代方案。",
+      "publishedAt": "2026-11-25T06:59:16.000Z"
+    }
+  ]
+}
