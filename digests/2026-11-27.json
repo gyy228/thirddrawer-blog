@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-27",
+  "status": "published",
+  "generatedAt": "2026-11-27T05:34:17.566Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "蚂蚁百灵 Ling-3.2-air 开源发布，提升编程、智能体与多模态能力",
+      "url": "https://www.oschina.net/news/503847",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "蚂蚁百灵开源新一代大模型 Ling-3.2-air：1240 亿总参数，每个 token 只激活 55 亿，稀疏度约 4.4%，推理成本对标 5.5B 小模型，官方称编程、智能体与多模态能力均有提升。",
+      "publishedAt": "2026-11-27T02:54:52.000Z"
+    },
+    {
+      "id": "2",
+      "title": "污染 0.1% 的预训练数据，就能给 AI 智能体埋下洗不掉的后门",
+      "url": "https://www.oschina.net/news/503823",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "论文《Agentic Backdoors via Pretraining Poisoning》指出，只污染 0.1% 的预训练数据就能给 AI 智能体植入后门，之后再用干净数据做微调和强化学习也无法清除，涉及训练数据供应链的信任问题。",
+      "publishedAt": "2026-11-26T03:58:54.000Z"
+    },
+    {
+      "id": "3",
+      "title": "别再让 AI 直接改原件：副本 + diff + 恢复三步走",
+      "url": "https://juejin.cn/post/7712438844813934632",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "针对 AI 直接改写真实文件的风险，介绍副本、diff、恢复三步流程：先在副本上操作，改完用 diff 比对留痕，并保留可回滚路径，是一套可直接照搬的文件处理习惯。",
+      "publishedAt": "2026-11-27T04:33:59.000Z"
+    },
+    {
+      "id": "4",
+      "title": "Agent 没有魔法，只有一个循环：自己写了个 DeepSeek 编码助手，拆开讲清它怎么干活",
+      "url": "https://juejin.cn/post/7712535963520892938",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "从零手写一个 DeepSeek 编码助手，把 Agent 拆成循环结构来讲，说明工具调用、上下文与执行流程如何运转，适合想弄清 Claude Code、Cursor 这类工具原理的开发者。",
+      "publishedAt": "2026-11-27T02:28:56.000Z"
+    },
+    {
+      "id": "5",
+      "title": "Claude Code 灵魂人物，开始反思 Vibe Coding 的未来了",
+      "url": "https://www.ifanr.com/1695671?utm_source=rss&utm_medium=rss&utm_campaign",
+      "source": "爱范儿",
+      "topic": "设计 / 产品",
+      "summary": "爱范儿报道 Claude Code 核心人物对 Vibe Coding 的反思，文中把 AI 形容为既是工业革命也是文艺复兴，涉及 AI 辅助编程下一阶段的走向与分工问题。",
+      "publishedAt": "2026-11-27T03:49:58.000Z"
+    }
+  ]
+}
