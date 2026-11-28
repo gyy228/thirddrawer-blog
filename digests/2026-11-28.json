@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-28",
+  "status": "published",
+  "generatedAt": "2026-11-28T05:10:44.066Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "id": "1",
+      "title": "Kimi 向科学家提供最高 2 万美元 API 免费额度",
+      "url": "https://www.solidot.org/story?sid=86015",
+      "source": "Solidot",
+      "topic": "AI / 机器学习",
+      "summary": "月之暗面推出 Kimi for Science 项目，面向自然科学、工程学及交叉学科研究人员，提供最高 2 万美元 API 免费额度，目前已开放申请。",
+      "publishedAt": "2026-11-27T16:14:48.000Z"
+    },
+    {
+      "id": "2",
+      "title": "微信开源 WeMM-Ecom：多模态基础模型家族、基于真实电商需求驱动",
+      "url": "https://www.oschina.net/news/503871",
+      "source": "开源中国",
+      "topic": "AI / 机器学习",
+      "summary": "微信视觉团队开源电商多模态基础模型家族 WeMM-Ecom，针对区分相似 SKU 等真实电商需求设计，代码已发布在 GitHub。",
+      "publishedAt": "2026-11-27T11:20:47.000Z"
+    },
+    {
+      "id": "3",
+      "title": "别再背参数了：Kafka、RocketMQ、RabbitMQ 的设计取舍与生产级避坑指南",
+      "url": "https://juejin.cn/post/7712980904230633507",
+      "source": "掘金",
+      "topic": "编程 / 工程实践",
+      "summary": "对比 Kafka、RocketMQ、RabbitMQ 三者的设计取舍，结合大促 8 万 TPS、队列堆积 300 万条等真实故障，给出生产环境避坑建议。",
+      "publishedAt": "2026-11-28T02:33:55.000Z"
+    },
+    {
+      "id": "4",
+      "title": "VS Code 1.148 加了个功能：agent 干活时别让电脑睡着",
+      "url": "https://www.oschina.net/news/503865/visual-studio-code-v1-148",
+      "source": "开源中国",
+      "topic": "编程 / 工程实践",
+      "summary": "VS Code 1.148 新增阻止系统进入空闲睡眠的功能，供 Agent 在后台长时间运行，关掉窗口后任务仍可继续执行。",
+      "publishedAt": "2026-11-27T09:28:29.000Z"
+    },
+    {
+      "id": "5",
+      "title": "大厂的应届生名额，正在先让给 AI 预算",
+      "url": "http://www.geekpark.net/news/374601",
+      "source": "极客公园",
+      "topic": "设计 / 产品",
+      "summary": "微软公开承认已延缓应届生招聘进度，文章从组织调整与预算分配角度，讨论大厂把招聘名额让给 AI 投入这一现象。",
+      "publishedAt": "2026-11-27T09:26:31.000Z"
+    }
+  ]
+}
